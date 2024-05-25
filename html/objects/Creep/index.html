@@ -67,26 +67,40 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="content-code" style="top: 10px;">
+                    <div class="content-code">
+                        <p style="color: #6394f8;" class="f16">body<span style="color: gray;" class="f12">array</span></p>
+                        <p class="f12">
+                            描述Creep的属性数组，每个元素包含以下几个数值：
+                            <ul class="f12" style="padding-left: 32px;">
+                                <li>type：string（该Creeps的类型之一）</li>
+                                <li>hits：number（该Creeps剩余的血量）</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="content-code">
+                        <p style="color: #6394f8;" class="f16">fatigue<span style="color: gray;" class="f12">number</span></p>
+                        <p class="f12">疲劳值，如果该值大于0，则该Creep不能移动</p>
+                    </div>
+                    <div class="content-code">
+                        <p style="color: #6394f8;" class="f16">hits<span style="color: gray;" class="f12">number</span></p>
+                        <p class="f12">该Creep目前的血量</p>
+                    </div>
+                    <div class="content-code">
+                        <p style="color: #6394f8;" class="f16">hitsMax<span style="color: gray;" class="f12">number</span></p>
+                        <p class="f12">该Creep目前的血量</p>
+                    </div>
+                    <div class="content-code">
+                        <p style="color: #6394f8;" class="f16">hits<span style="color: gray;" class="f12">number</span></p>
+                        <p class="f12">该Creep的最大血量</p>
+                    </div>
+                    <div class="content-code">
                         <p style="color: #6394f8;" class="f16">my<span style="color: gray;" class="f12">boolean</span></p>
-                        <p class="f12">该结构空位目前是你正在建造的</p>
+                        <p class="f12">属于你自己的Creep</p>
                     </div>
-                    <!-- <div class="content-code" style="top: 40px;">
-                        <p style="color: #6394f8;" class="f16">progress<span style="color: gray;" class="f12">number</span></p>
-                        <p class="f12">该结构目前建筑的进度</p>
+                    <div class="content-code">
+                        <p style="color: #6394f8;" class="f16">store<span style="color: gray;" class="f12"><a class="hl" href="../Store/">Store</a></span></p>
+                        <p class="f12">一个存储容器对象，包含目前该Creep所拥有的货物</p>
                     </div>
-                    <div class="content-code" style="top: 40px;">
-                        <p style="color: #6394f8;" class="f16">progressTotal<span style="color: gray;" class="f12">number</span></p>
-                        <p class="f12">场上要建筑的结构的总进度</p>
-                    </div>
-                    <div class="content-code" style="top: 40px;">
-                        <p style="color: #6394f8;" class="f16">structure<span style="color: gray;" class="f12"><a class="hl" href="../Structure/">Structure</a></span></p>
-                        <p class="f12">建造的结构（当该结构建完成时）</p>
-                    </div>
-                    <div class="content-code" style="top: 40px;">
-                        <p style="color: #6394f8;" class="f16">remove<span style="color: white;">()</p>
-                        <p class="f12">移除建造的结构</p>
-                    </div> -->
                 </div>
                 <div class="content-rright">
                     <pre><code class="javascript"></code></pre>

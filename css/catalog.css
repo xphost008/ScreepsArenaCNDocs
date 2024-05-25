@@ -157,6 +157,7 @@ a.cost:active {
     background-color: #1e212c;
     position: relative;
     left: 10px;
+    top: 0;
 }
 .f12 {
     font-size: 12px;
