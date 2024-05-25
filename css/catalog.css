@@ -1,0 +1,170 @@
+.tle {
+    font-size: 14px;
+    color: gray;
+    cursor: pointer;
+}
+.all {
+    background-color: #2c303f;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+a.cl:link {
+    text-decoration: none;
+    color: #FFF;
+}
+a.cl:visited {
+    text-decoration: none;
+    color: #FFF;
+}
+a.cl:hover {
+    text-decoration: none;
+    color: #6394f8;
+}
+a.cl:active {
+    text-decoration: none;
+    color: #6394f8;
+}
+a.hl:link {
+    color: gray;
+}
+a.hl:visited {
+    color: gray;
+}
+a.hl:hover {
+    color: #6394f8;
+}
+a.hl:active {
+    color: #6394f8;
+}
+.cp {
+    background-color: #0f0f0f;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+a.move:link {
+    text-decoration: none;
+    color: gray;
+}
+a.move:visited {
+    text-decoration: none;
+    color: gray;
+}
+a.work:link {
+    text-decoration: none;
+    color: yellow;
+}
+a.work:visited {
+    text-decoration: none;
+    color: yellow;
+}
+a.carry:link {
+    text-decoration: none;
+    color: rgb(119, 119, 119);
+}
+a.carry:visited {
+    text-decoration: none;
+    color: rgb(119, 119, 119);
+}
+a.attack:link {
+    text-decoration: none;
+    color: red;
+}
+a.attack:visited {
+    text-decoration: none;
+    color: red;
+}
+a.ranged:link {
+    text-decoration: none;
+    color: skyblue;
+}
+a.ranged:visited {
+    text-decoration: none;
+    color: skyblue;
+}
+a.heal:link {
+    text-decoration: none;
+    color: #66ff00;
+}
+a.heal:visited {
+    text-decoration: none;
+    color: #66ff00;
+}
+a.touch:link {
+    text-decoration: none;
+    color: white;
+}
+a.touch:visited {
+    text-decoration: none;
+    color: white;
+}
+a.cp:active {
+    text-decoration: none;
+    color: #6394f8;
+}
+a.cp:hover {
+    text-decoration: none;
+    color: #6394f8;
+}
+a.cost:link {
+    color: white;
+}
+a.cost:visited {
+    color: white;
+}
+a.cost:hover {
+    color: #6394f8;
+}
+a.cost:active {
+    color: #6394f8;
+}
+.clct {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.content-all {
+    display: flex;
+}
+.content-left {
+    flex: 0 0 250px;
+    width: 300px;
+}
+.content-right {
+    display: flex;
+    flex-grow: 1;
+    background-color: #2c303f;
+    overflow-y: auto;
+}
+.content-middle {
+    display: block;
+    background-color: #171c26;
+    flex: 0 0 730px;
+    height: 100vh;
+    word-wrap: break-word;
+}
+.content-rright {
+    flex-grow: 1;
+    background-color: #2c303f;
+    height: 100vh;
+    word-wrap: break-word;
+}
+.content-code {
+    width: 710px;
+    background-color: #1e212c;
+    position: relative;
+    left: 10px;
+}
+.f12 {
+    font-size: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.f16 {
+    font-size: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>arenaInfo</title>
+        <link rel="stylesheet" type="text/css" href="../../../js//styles/atom-one-dark-reasonable.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/catalog.css">
+        <script src="../../../js/highlight.min.js"></script>
+    </head>
+    <body class="all" style="overflow-y: hidden;">
+        <script>
+            hljs.highlightAll();
+        </script>
+        <div class="content-all">
+            <div class="content-left">
+                <iframe class="clct" src="../../catelog.html" frameborder="0"></iframe>
+            </div>
+            <div class="content-right">
+                <div class="content-middle">
+                    <p style="color: #6394f8; font-size: 24px; font-weight: bold; padding-left: 16px;">Creep<span style="color: gray;" class="f16">class extends GameObject
+                    </span></p>
+                    <p class="f12">Creep们是你的工作单位，Creep们可以移动、抓取能量、建造结构、攻击其他人的Creep以及执行很多别的功能。每个Creep最多可以拥有50个bodyPart（属性【下同】）构成，可以有以下几种类型：</p>
+                    <div style="padding-left: 16px;">
+                        <table class="f12" style="border-collapse: collapse;" cellpadding="8">
+                            <thead>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray; width: 100px; font-weight: bold;">属性</td>
+                                    <td style="border-bottom: 1px solid gray; width: 50px; font-weight: bold;">花费</td>
+                                    <td style="border-bottom: 1px solid gray; width: 300px; font-weight: bold;">属性功能</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray; width: 100px;"><a class="cp move" href="#">MOVE</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 50px;"><a class="cost" href="#">50</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 300px;">每刻减少2点疲劳值</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray; width: 100px;"><a class="cp work" href="#">WORK</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 50px;"><a class="cost" href="#">100</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 300px;">每刻从一个能量源抓取2点能量单元<br>每刻构建一个可容纳5点能源单元的结构</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray; width: 100px;"><a class="cp carry" href="#">CARRY</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 50px;"><a class="cost" href="#">50</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 300px;">最多可以容纳50个资源单元</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray; width: 100px;"><a class="cp attack" href="#">ATTACK</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 50px;"><a class="cost" href="#">80</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 300px;">攻击其他的Creep、结构，用短距离每刻攻击30次</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray; width: 100px;"><a class="cp ranged" href="#">RANGED_ATTACK</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 50px;"><a class="cost" href="#">150</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 300px;">攻击其他的Creep、结构，用3格远长距离每刻攻击10次<br>攻击3格范围内所有Creep、结构，命中1-4-10次【取决于格数】</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray; width: 100px;"><a class="cp heal" href="#">HEAL</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 50px;"><a class="cost" href="#">250</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 300px;">治疗自身或另一个Creep，在短距离内每刻治疗12次，远距离每刻治疗4次</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray; width: 100px;"><a class="cp touch" href="#">TOUCH</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 50px;"><a class="cost" href="#">10</a></td>
+                                    <td style="border-bottom: 1px solid gray; width: 300px;">没有任何效果，只是对Creep增加了额外的命中点。（ps：就一占位符）</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="content-code" style="top: 10px;">
+                        <p style="color: #6394f8;" class="f16">my<span style="color: gray;" class="f12">boolean</span></p>
+                        <p class="f12">该结构空位目前是你正在建造的</p>
+                    </div>
+                    <!-- <div class="content-code" style="top: 40px;">
+                        <p style="color: #6394f8;" class="f16">progress<span style="color: gray;" class="f12">number</span></p>
+                        <p class="f12">该结构目前建筑的进度</p>
+                    </div>
+                    <div class="content-code" style="top: 40px;">
+                        <p style="color: #6394f8;" class="f16">progressTotal<span style="color: gray;" class="f12">number</span></p>
+                        <p class="f12">场上要建筑的结构的总进度</p>
+                    </div>
+                    <div class="content-code" style="top: 40px;">
+                        <p style="color: #6394f8;" class="f16">structure<span style="color: gray;" class="f12"><a class="hl" href="../Structure/">Structure</a></span></p>
+                        <p class="f12">建造的结构（当该结构建完成时）</p>
+                    </div>
+                    <div class="content-code" style="top: 40px;">
+                        <p style="color: #6394f8;" class="f16">remove<span style="color: white;">()</p>
+                        <p class="f12">移除建造的结构</p>
+                    </div> -->
+                </div>
+                <div class="content-rright">
+                    <pre><code class="javascript"></code></pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
