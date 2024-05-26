@@ -220,6 +220,7 @@ a.cost:active {
 .content-rright {
     background-color: #2c303f;
     height: 100%;
+    display: block;
     word-wrap: break-word;
 }
 .content-code {

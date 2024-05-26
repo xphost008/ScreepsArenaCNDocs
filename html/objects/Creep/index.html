@@ -3,7 +3,7 @@
     <head>
         <title>Creep</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="../../../js//styles/atom-one-dark-reasonable.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../js/styles/atom-one-dark-reasonable.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/catalog.css">
         <script src="../../../js/highlight.min.js"></script>
     </head>
@@ -71,7 +71,7 @@
                     <div class="content-code" id="creep-body">
                         <p class="f16"><a class="head" href="#creep-body">body</a><span style="color: gray;" class="f12">array</span></p>
                         <p class="f12">
-                            描述Creep的属性数组，每个元素包含以下几个数值：
+                            描述Creep的属性列表，每个元素包含以下几个数值：
                             <ul class="f12" style="padding-left: 32px;">
                                 <li>type：string（该Creeps的类型之一）</li>
                                 <li>hits：number（该Creeps剩余的血量）</li>
@@ -525,7 +525,7 @@
                         </div>
                     </div>
                     <div class="content-code" id="creep-pull">
-                        <p class="f16"><a class="head" href="#creep-pickup">pull</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
+                        <p class="f16"><a class="head" href="#creep-pull">pull</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
                         <p class="f12">帮助另一个Creep跟随这个Creep，target（目标）移动所产生的疲劳值将赋给这个Creep。需要该Creep具有<a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a>属性。目标必须位于该Creep的相邻区块内，Creep必须移动到其他地方，目标需要向着该Creep移动。</p>
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
@@ -845,7 +845,89 @@
                     </div>
                 </div>
                 <div class="content-rright">
-                    <pre><code class="javascript"></code></pre>
+                    <div style="padding-top: 876px">
+                        <pre><code class="javascript">let hostileCreeps = getObjectsByPrototype(Creep).filter(i => !i.my);
+let target = creep.findClosestByRange(hostileCreeps);
+if (target){
+    creep.move(target);
+    creep.attack(target);
+}</code></pre>
+                    </div>
+                    <div style="padding-top: 233px">
+                        <pre><code class="javascript">let myConstructionSites = getObjectsByPrototype(ConstructionSite).filter(i => i.my);
+let target = creep.findClosestByRange(myConstructionSites);
+if (target) {
+    if (creep.build(target) == ERR_NOT_IN_RANGE) {
+        creep.move(target);
+    }
+}</code></pre>
+                    </div>
+                    <div style="padding-top: 249px">
+                        <pre><code class="javascript">creep.drop(RESOURCE_ENERGY);</code></pre>
+                    </div>
+                    <div style="padding-top: 295px">
+                        <pre><code class="javascript">let activeSources = getObjectsByPrototype(Source).filter(i => i.energy > 0);
+let source = creep.findClosestByRange(activeSources);
+if(source){
+    if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
+        creep.move(source);
+    }
+}</code></pre>
+                    </div>
+                    <div style="padding-top: 234px">
+                        <pre><code class="javascript">let creeps = getObjectsByPrototype(Creep);
+let myDamagedCreeps = creeps.filter(i => i.my && i.hits < i.hitsMax);
+let target = tower.findClosestByRange(myDamagedCreeps);
+if (creep.heal(target) == ERR_NOT_IN_RANGE) {
+    creep.moveTo(target);
+}</code></pre>
+                    </div>
+                    <div style="padding-top: 218px">
+                        <pre><code class="javascript">creep.move(RIGHT);</code></pre>
+                    </div>
+                    <div style="padding-top: 310px">
+                        <pre><code class="javascript">creep1.moveTo(creep2);
+creep2.moveTo({x: 50, y: 50});</code></pre>
+                    </div>
+                    <div style="padding-top: 262px">
+                        <pre><code class="javascript">let resources = getObjectsByPrototype(Resource);
+let target = creep.findClosestByRange(resources);
+if (target) {
+    if (creep.pickup(target) == ERR_NOT_IN_RANGE) {
+        creep.moveTo(target);
+    }
+}</code></pre>
+                    </div>
+                    <div style="padding-top: 202px">
+                        <pre><code class="javascript">creep1.move(TOP);
+creep1.pull(creep2);
+creep2.moveTo(creep1);</code></pre>
+                    </div>
+                    <div style="padding-top: 232px">
+                        <pre><code class="javascript">let hostileCreeps = getObjectsByPrototype(Creep).filter(i => !i.my);
+let targets = creep.findInRange(hostileCreeps);
+if (targets.length) {
+    creep.rangedAttack(targets[0]);
+}</code></pre>
+                    </div>
+                    <div style="padding-top: 248px">
+                        <pre><code class="javascript">let creeps = getObjectsByPrototype(Creep);
+let myDamagedCreeps = creeps.filter(i => i.my && i.hits < i.hitsMax);
+let targets = creep.findInRange(myDamagedCreeps);
+if (targets.length) {
+    creep.rangedHeal(targets[0]);
+}</code></pre>
+                    </div>
+                    <div style="padding-top: 438px">
+                        <pre><code class="javascript">if (creep.transfer(tower, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+    creep.moveTo(tower);
+}</code></pre>
+                    </div>
+                    <div style="padding-top: 423px">
+                        <pre><code class="javascript">if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+    creep.moveTo(container);
+}</code></pre>
+                    </div>
                 </div>
             </div>
         </div>
