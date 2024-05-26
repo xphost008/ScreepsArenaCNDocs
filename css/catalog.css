@@ -9,6 +9,26 @@
     margin: 0;
     padding: 0;
 }
+.head:hover {
+    text-decoration: none;
+    color: #6394f8;
+}
+.head:link {
+    text-decoration: none;
+    color: #6394f8;
+}
+.head:visited {
+    text-decoration: none;
+    color: #6394f8;
+}
+.head:active {
+    text-decoration: none;
+    color: #6394f8;
+}
+.tch:hover {
+    cursor: default;
+    color: #483D8B;
+}
 a.cl:link {
     text-decoration: none;
     color: #FFF;
@@ -127,29 +147,31 @@ a.cost:active {
     border: none;
 }
 .content-all {
-    display: flex;
+    display: grid;
+    grid-template-areas: 'a b';
+    grid-template-columns: 300px auto;
 }
 .content-left {
+    grid-area: a;
     flex: 0 0 250px;
-    width: 300px;
 }
 .content-right {
-    display: flex;
-    flex-grow: 1;
+    grid-area: b;
+    display: grid;
+    grid-template-areas: 'c d';
+    grid-template-columns: 730px auto;
+    height: 100vh;
     background-color: #2c303f;
     overflow-y: auto;
 }
 .content-middle {
-    display: block;
     background-color: #171c26;
-    flex: 0 0 730px;
-    height: 100vh;
+    grid-area: c;
     word-wrap: break-word;
 }
 .content-rright {
-    flex-grow: 1;
     background-color: #2c303f;
-    height: 100vh;
+    height: 100%;
     word-wrap: break-word;
 }
 .content-code {
@@ -166,6 +188,12 @@ a.cost:active {
 }
 .f16 {
     font-size: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.f24 {
+    font-size: 24px;
+    font-weight: bold;
     padding-left: 16px;
     padding-right: 16px;
 }
