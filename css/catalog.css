@@ -195,40 +195,44 @@ a.cost:active {
     border: none;
 }
 .content-all {
-    display: grid;
-    grid-template-areas: 'a b';
-    grid-template-columns: 300px auto;
+    display: flex;
 }
 .content-left {
-    grid-area: a;
-    flex: 0 0 250px;
+    position: fixed;
+    float: left;
+    height: 100%;
+    width: 250px;
 }
 .content-right {
-    grid-area: b;
-    display: grid;
-    grid-template-areas: 'c d';
-    grid-template-columns: 730px auto;
-    height: 100vh;
-    background-color: #2c303f;
-    overflow-y: auto;
-}
-.content-middle {
-    background-color: #171c26;
-    grid-area: c;
-    word-wrap: break-word;
-}
-.content-rright {
-    background-color: #2c303f;
-    height: 100%;
     display: block;
-    word-wrap: break-word;
+    float: right;
+    position: fixed;
+    overflow-y: auto;
+    left: 250px;
+    right: 0;
+    height: 100%;
+    background-color: #2c303f;
+}
+.content-chapter {
+    display: flex;
+    padding: 5px 5px 5px 5px;
+    background-color: #2c303f;
+}
+.content-desc {
+    flex: 0 0 730px;
+    background-color: #161c26;
+    border-radius: 5px;
 }
 .content-code {
+    flex-grow: 1;
+    background-color: #2c303f;
+    border-radius: 5px;
+}
+.content-inside {
     width: 710px;
     background-color: #1e212c;
-    position: relative;
-    left: 10px;
-    top: 0;
+    padding-left: 10px;
+    border-radius: 5px;
 }
 .f12 {
     font-size: 12px;

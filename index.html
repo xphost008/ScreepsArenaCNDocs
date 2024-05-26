@@ -1,14 +1,1172 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="3;url=./html/objects/arenaInfo">
+<!--        <meta http-equiv="refresh" content="3;url=./html/objects/arenaInfo">-->
         <title>Screeps Arena中文文档</title>
+        <link rel="stylesheet" type="text/css" href="js/styles/atom-one-dark-reasonable.min.css">
+        <link rel="stylesheet" type="text/css" href="css/catalog.css">
+        <script src="js/highlight.min.js"></script>
     </head>
-    <body>
-        <h1>欢迎来到Screeps Arena中文文档！</h1>
-        <h3>3秒后跳转到第一章</h3>
-        <p>页面跳转中，请稍后……</p>
-        <p>如果浏览器没有跳转，请点击右侧链接手动跳转：<a href="./html/objects/arenaInfo/">点我跳转</a></p>
+    <body class="all" style="overflow-y: hidden">
+        <script>
+            hljs.highlightAll();
+        </script>
+        <div class="content-all">
+            <div class="content-left">
+                <iframe class="clct" src="./catalog.html" frameborder="0"></iframe>
+            </div>
+            <div class="content-right">
+                <div class="content-chapter">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24" id="objects-arenaInfo">arenaInfo</span><span style="color: gray;" class="f16">object</span></p>
+                        <div class="content-inside" id="arenaInfo-name">
+                            <p class="f16"><a class="head" href="#arenaInfo-name">name</a><span style="color: gray;" class="f12">string</span></p>
+                            <p class="f12">竞技场的名字</p>
+                        </div>
+                        <div class="content-inside" id="arenaInfo-level">
+                            <p class="f16"><a class="head" href="#arenaInfo-level">level</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">目前处于Basic（基础）竞技场的等级为1，Advance（高级）竞技场的等级为2</p>
+                        </div>
+                        <div class="content-inside" id="arenaInfo-season">
+                            <p class="f16"><a class="head" href="#arenaInfo-season">season</a><span style="color: gray;" class="f12">string</span></p>
+                            <p class="f12">赛季，目前等于“alpha”</p>
+                        </div>
+                        <div class="content-inside" id="arenaInfo-ticksLimit">
+                            <p class="f16"><a class="head" href="#arenaInfo-ticksLimit">ticksLimit</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">游戏tick（时间）限制</p>
+                        </div>
+                        <div class="content-inside" id="arenaInfo-cpuTimeLimit">
+                            <p class="f16"><a class="head" href="#arenaInfo-cpuTimeLimit">cpuTimeLimit</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">每刻的CPU执行效率时间限制（除了第一刻）</p>
+                        </div>
+                        <div class="content-inside" id="arenaInfo-cpuTimeLimitFirstTick">
+                            <p class="f16"><a class="head" href="#arenaInfo-cpuTimeLimitFirstTick">cpuTimeLimitFirstTick</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">第一刻的CPU执行效率时间限制</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">import { arenaInfo } from 'game';
+export function loop(){
+    console.log(arenaInfo.name);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24" id="objects-ConstructionSite">ConstructionSite</span><span style="color: gray;" class="f16">class extends GameObject
+                    </span></p>
+                        <p class="f12">一个正在建筑中的结构空位，要在该空位上建造一个结构，你需要给附有 WORK 属性的creep一些能量，并且执行build功能。</p>
+                        <div class="content-inside" id="constructionSite-my">
+                            <p class="f16"><a class="head" href="#constructionSite-my">my</a><span style="color: gray;" class="f12">boolean</span></p>
+                            <p class="f12">该结构空位目前是你正在建造的</p>
+                        </div>
+                        <div class="content-inside" id="constructionSite-progress">
+                            <p class="f16"><a class="head" href="#constructionSite-progress">progress</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">该结构目前建筑的进度</p>
+                        </div>
+                        <div class="content-inside" id="constructionSite-progressTotal">
+                            <p class="f16"><a class="head" href="#constructionSite-progressTotal">progressTotal</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">场上要建筑的结构的总进度</p>
+                        </div>
+                        <div class="content-inside" id="constructionSite-structure">
+                            <p class="f16"><a class="head" href="#constructionSite-structure">structure</a><span style="color: gray;" class="f12"><a class="hl" href="../Structure/">Structure</a></span></p>
+                            <p class="f12">建造的结构（当该结构建完成时）</p>
+                        </div>
+                        <div class="content-inside" id="constructionSite-remove">
+                            <p class="f16"><a class="head" href="#constructionSite-remove">remove</a><span style="color: white;">()</span></p>
+                            <p class="f12">移除建造的结构</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24" id="objects-Creep">Creep</span><span style="color: gray;" class="f16">class extends GameObject</span></p>
+                        <p class="f12">Creep们是你的工作单位，Creep们可以移动、抓取能量、建造结构、攻击其他人的Creep以及执行很多别的功能。每个Creep最多可以拥有50个bodyPart（属性【下同】）构成，可以有以下几种类型：</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray; width: 80px; font-weight: bold;">属性</td>
+                                    <td style="border-bottom: 1px solid gray; width: 50px; font-weight: bold;">花费</td>
+                                    <td style="border-bottom: 1px solid gray; width: 460px; font-weight: bold;">属性功能</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">50</a></td>
+                                    <td style="border-bottom: 1px solid gray;">每刻减少2点疲劳值</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp work" href="../../constants/all/#constants-WORK">WORK</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">100</a></td>
+                                    <td style="border-bottom: 1px solid gray;">每刻从一个能量源抓取2点能量单元<br>每刻构建一个可容纳5点能源单元的结构</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">50</a></td>
+                                    <td style="border-bottom: 1px solid gray;">最多可以容纳50个资源单元</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp attack" href="../../constants/all/#constants-all-ATTACK">ATTACK</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">80</a></td>
+                                    <td style="border-bottom: 1px solid gray;">攻击其他的Creep、结构，用短距离每刻攻击30次</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp ranged" href="../../constants/all/#constants-all-RANGED_ATTACK">RANGED_ATTACK</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">150</a></td>
+                                    <td style="border-bottom: 1px solid gray;">攻击其他的Creep、结构，用3格远长距离每刻攻击10次<br>攻击3格范围内所有Creep、结构，命中1-4-10次【取决于格数】</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp heal" href="../../constants/all/#constants-all-HEAL">HEAL</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">250</a></td>
+                                    <td style="border-bottom: 1px solid gray;">治疗自身或另一个Creep，在短距离内每刻治疗12次，远距离每刻治疗4次</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp tough" href="../../constants/all/#constants-all-TOUGH">TOUGH</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">10</a></td>
+                                    <td style="border-bottom: 1px solid gray;">没有任何效果，只是对Creep增加了额外的命中点。（ps：就一占位符）</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="content-inside" id="creep-body">
+                            <p class="f16"><a class="head" href="#creep-body">body</a><span style="color: gray;" class="f12">array</span></p>
+                            <p class="f12">
+                                描述Creep的属性列表，每个元素包含以下几个数值：
+                            <ul class="f12" style="padding-left: 32px;">
+                                <li>type：string（该Creeps的类型之一）</li>
+                                <li>hits：number（该Creeps剩余的血量）</li>
+                            </ul>
+                            </p>
+                        </div>
+                        <div class="content-inside" id="creep-fatigue">
+                            <p class="f16"><a class="head" href="#creep-fatigue">fatigue</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">疲劳值，如果该值大于0，则该Creep不能移动</p>
+                        </div>
+                        <div class="content-inside" id="creep-hits">
+                            <p class="f16"><a class="head" href="#creep-hits">hits</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">该Creep目前的血量</p>
+                        </div>
+                        <div class="content-inside" id="creep-hitsMax">
+                            <p class="f16"><a class="head" href="#creep-hitsMax">hitsMax</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">该Creep的最大血量</p>
+                        </div>
+                        <div class="content-inside" id="creep-my">
+                            <p class="f16"><a class="head" href="#creep-my">my</a><span style="color: gray;" class="f12">boolean</span></p>
+                            <p class="f12">属于你自己的Creep</p>
+                        </div>
+                        <div class="content-inside" id="creep-store">
+                            <p class="f16"><a class="head" href="#creep-store">store</a><span style="color: gray;" class="f12"><a class="hl" href="../Store/">Store</a></span></p>
+                            <p class="f12">一个存储容器对象，包含目前该Creep所拥有的货物</p>
+                        </div>
+                        <div class="content-inside" id="creep-attack">
+                            <p class="f16"><a class="head" href="#creep-attack">attack</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
+                            <p class="f12">使用近战攻击邻近的另一个Creep或结构。需要该Creep具有<a class="cp attack" href="../../constants/all/#constants-all-ATTACK">ATTACK</a>属性。如果要攻击的目标位于墙壁内，则会攻击该墙壁。要攻击的目标必须位于Creep的相邻区块中。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="../Creep/">Creep</a><br><a class="cp carry" href="../Structure/">Structure</a></td>
+                                        <td>要攻击的目标对象</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>目标不属于可被攻击的对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td>-9</td>
+                                        <td>目标太远啦</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td>-12</td>
+                                        <td>这个Creep的属性列表里并没有ATTACK（攻击）属性</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-build">
+                            <p class="f16"><a class="head" href="#creep-build">build</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
+                            <p class="f12">使用该Creep携带的能量在目标区块建造一个结构。需要该Creep具有<a class="cp work" href="../../constants/all/#constants-all-WORK">WORK</a>和<a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a>属性。目标区块必须在Creep的3个区块范围以内。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="../ConstructionSite/">ConstructionSite</a></td>
+                                        <td>要建造的目标建筑描述</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                        <td>-6</td>
+                                        <td>该Creep没有足够多的搬运能量</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>目标不是可以被建造的单位，或者是你无法在此处建造结构（可能是因为你要建造的区块有障碍物）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td>-9</td>
+                                        <td>目标太远啦</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td>-12</td>
+                                        <td>这个Creep的属性列表里并没有WORK（攻击）属性</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-drop">
+                            <p class="f16"><a class="head" href="#creep-drop">drop</a><span style="color: white;">(</span><span class="tch">resourceType</span><span style="color: white;">, </span><span class="tch">[amount]</span><span style="color: white;">)</span></p>
+                            <p class="f12">将该Creep身上的资源置于当前区块位置（扔掉）</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">resourceType</td>
+                                        <td><span style="color: gray">string</span></td>
+                                        <td>RESOURCE_*的常量之一</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">amount (optional)</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>要置于当前区块的资源数量</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                        <td>-6</td>
+                                        <td>该Creep没有该数量那么多的资源要置于地上</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
+                                        <td>-10</td>
+                                        <td>resourceType参数有误，并不是有效的RESOURCE_*常量之一</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-harvest">
+                            <p class="f16"><a class="head" href="#creep-harvest">harvest</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
+                            <p class="f12">从能量源区块获取能量，需要该Creep具有<a class="cp work" href="../../constants/all/#constants-all-WORK">WORK</a>属性，如果该Creep具有<a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a>属性，将会把收集的资源置入身体里，否则资源将会掉落在相邻的地面上。目标必须位于该Creep的相邻区块内</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="../Source/">Source</a></td>
+                                        <td>要收集的资源对象</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                        <td>-6</td>
+                                        <td>目标不包含任何可收集的资源</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>目标不属于可以被收集资源的对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td>-9</td>
+                                        <td>目标太远啦</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td>-12</td>
+                                        <td>你的Creep属性列表没有包含WORK属性</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-heal">
+                            <p class="f16"><a class="head" href="#creep-heal">heal</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
+                            <p class="f12">治疗自己或其他己方的Creep，它将恢复Creep们受到伤害的部分，并恢复血量。需要该Creep具有<a class="cp heal" href="../../constants/all/#constants-all-HEAL">HEAL</a>属性，目标必须位于该Creep的相邻区块内</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="../Creep/">Creep</a></td>
+                                        <td>要治疗的目标对象</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>目标不是有效的Creep对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td>-9</td>
+                                        <td>目标太远啦</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td>-12</td>
+                                        <td>你的Creep属性列表没有包含HEAL属性</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-move">
+                            <p class="f16"><a class="head" href="#creep-move">move</a><span style="color: white;">(</span><span class="tch">direction</span><span style="color: white;">)</span></p>
+                            <p class="f12">将该Creep沿指定方向一直移动，直到撞到墙壁。需要该Creep具有<a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a>属性</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">direction</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>支持以下常量之一<br><a class="cl cp" href="../../constants/all/#constants-all-TOP">TOP</a> <a class="cl cp" href="../../constants/all/#constants-all-TOP_RIGHT">TOP_RIGHT</a> <a class="cl cp" href="../../constants/all/#constants-all-RIGHT">RIGHT</a> <a class="cl cp" href="../../constants/all/#constants-all-BOTTOM_RIGHT">BOTTOM_RIGHT</a> <a class="cl cp" href="../../constants/all/#constants-all-BOTTOM">BOTTOM</a> <a class="cl cp" href="../../constants/all/#constants-all-BOTTOM_LEFT">BOTTOM_LEFT</a> <a class="cl cp" href="../../constants/all/#constants-all-LEFT">LEFT</a> <a class="cl cp" href="../../constants/all/#constants-all-TOP_LEFT">TOP_LEFT</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
+                                        <td>-10</td>
+                                        <td>输入的方向常量不正确</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_TIRED</a></td>
+                                        <td>-11</td>
+                                        <td>该Creep的疲劳值大于0，无法移动</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td>-12</td>
+                                        <td>你的Creep属性列表没有包含MOVE属性</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-moveTo">
+                            <p class="f16"><a class="head" href="#creep-moveTo">moveTo</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">, </span><span class="tch">opts</span><span style="color: white;">)</span></p>
+                            <p class="f12">找到到达目标区块的最佳路径，并尝试移动到该目标区块。需要该Creep具有<a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a>属性</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>可以是<a class="cost" href="../GameObject/">GameObject</a>或者任何包含了x和y属性的对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">opts</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>一个附带着附加属性的对象，这些选项将按照参数传值给<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findPath/">findPath</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_TIRED</a></td>
+                                        <td>-11</td>
+                                        <td>该Creep的疲劳值大于0，无法移动</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td>-12</td>
+                                        <td>你的Creep属性列表没有包含MOVE属性</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-pickup">
+                            <p class="f16"><a class="head" href="#creep-pickup">pickup</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
+                            <p class="f12">捡起该区块的一个物品（一个扔掉的资源），需要该Creep具有<a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a>属性。目标必须位于该Creep的相邻区块或位于同一区块内</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="../Resource/">Resource</a></td>
+                                        <td>要拾取的目标对象</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>目标不是一个有效的Creep对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_FULL</a></td>
+                                        <td>-8</td>
+                                        <td>该Creep已经不能接收更多的资源了（已经满了）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NOT_IN_RANGE</a></td>
+                                        <td>-9</td>
+                                        <td>目标太远啦</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-pull">
+                            <p class="f16"><a class="head" href="#creep-pull">pull</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
+                            <p class="f12">帮助另一个Creep跟随这个Creep，target（目标）移动所产生的疲劳值将赋给这个Creep。需要该Creep具有<a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a>属性。目标必须位于该Creep的相邻区块内，Creep必须移动到其他地方，目标需要向着该Creep移动。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="../Creep/">Creep</a></td>
+                                        <td>目标Creep</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>目标不是一个有效的Creep对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NOT_IN_RANGE</a></td>
+                                        <td>-9</td>
+                                        <td>目标太远啦</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-rangedAttack">
+                            <p class="f16"><a class="head" href="#creep-rangedAttack">rangedAttack</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
+                            <p class="f12">使用远程攻击邻近的另一个Creep或结构。需要该Creep具有<a class="cp ranged" href="../../constants/all/#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性。如果要攻击的目标位于墙壁内，则会攻击该墙壁。要攻击的目标必须位于Creep的3格区块内</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="../Creep/">Creep</a><br><a class="cp carry" href="../Structure/">Structure</a></td>
+                                        <td>要攻击的目标对象</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>目标不属于可被攻击的对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td>-9</td>
+                                        <td>目标太远啦</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td>-12</td>
+                                        <td>这个Creep的属性列表里并没有<a class="cp ranged" href="../../constants/all/#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-rangedHeal">
+                            <p class="f16"><a class="head" href="#creep-rangedHeal">rangedHeal</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
+                            <p class="f12">治疗自己或远处的其他己方的Creep，它将恢复Creep们受到伤害的部分，并恢复血量。需要该Creep具有<a class="cp heal" href="../../constants/all/#constants-all-HEAL">HEAL</a>属性，目标必须位于该Creep的3格区块内</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="../Creep/">Creep</a></td>
+                                        <td>要治疗的目标Creep对象</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>目标不是有效的Creep对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td>-9</td>
+                                        <td>目标太远啦</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td>-12</td>
+                                        <td>你的Creep属性列表没有包含<a class="cp heal" href="../../constants/all/#constants-all-HEAL">HEAL</a>属性</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-rangedMassAttack">
+                            <p class="f16"><a class="head" href="#creep-rangedHeal">rangedMassAttack</a><span style="color: white;">()</span></p>
+                            <p class="f12">对3格区块以内的所有敌方Creep或建筑进行远程攻击。需要该Creep具有<a class="cp ranged" href="../../constants/all/#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性，攻击力取决于该Creep对每个目标的射程，己方单位不受此影响。</p>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td>-12</td>
+                                        <td>你的Creep属性列表没有包含<a class="cp ranged" href="../../constants/all/#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-transfer">
+                            <p class="f16"><a class="head" href="#creep-transfer">transfer</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">, </span><span class="tch">resourceType</span><span style="color: white;">, </span><span class="tch">[amount]</span><span style="color: white;">)</span></p>
+                            <p class="f12">将资源从Creep身上转到另一个【对象】上。目标必须位于该Creep的相邻区块内</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="../Creep/">Creep</a><br><a class="cp carry" href="../Structure/">Structure</a></td>
+                                        <td>要转移的目标对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">resourceType</td>
+                                        <td><span style="color: gray">string</span></td>
+                                        <td>RESOURCE_*的常量之一</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">amount (optional)</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>要转移的资源数量，如果省略该值，则默认转移所有可用的资源。</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                        <td>-6</td>
+                                        <td>该Creep目前没有指定数量的资源可供转移</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>要转移的目标对象不属于可以包含指定资源的有效对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_FULL</a></td>
+                                        <td>-8</td>
+                                        <td>目标已经不能接收更多的资源了（已经满了）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td>-9</td>
+                                        <td>目标太远啦</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_ARGS</a></td>
+                                        <td>-10</td>
+                                        <td>resourceType参数填写不属于RESOURCE_*常量之一，或者填写的数量不正确。</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="creep-withdraw">
+                            <p class="f16"><a class="head" href="#creep-withdraw">withdraw</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">, </span><span class="tch">resourceType</span><span style="color: white;">, </span><span class="tch">[amount]</span><span style="color: white;">)</span></p>
+                            <p class="f12">从结构中抓取资源。目标必须位于该Creep的相邻区块内。多个Creep可以在同一个tick里对同一个对象进行抓取。你的Creep也可以从敌人的结构中抓取资源，以防止你的领地里没有敌人的结构。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="../Structure/">Structure</a></td>
+                                        <td>要抓取的目标结构</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">resourceType</td>
+                                        <td><span style="color: gray">string</span></td>
+                                        <td>RESOURCE_*的常量之一</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">amount (optional)</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>要抓取的资源数量，如果省略该值，则默认抓取所有可用的资源。</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                        <td>-6</td>
+                                        <td>目标结构目前没有指定数量的资源可供转移</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>要抓取的目标对象不属于可以包含指定资源的有效对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_FULL</a></td>
+                                        <td>-8</td>
+                                        <td>该Creep已经不能接收更多的资源了（已经满了）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td>-9</td>
+                                        <td>目标太远啦</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_ARGS</a></td>
+                                        <td>-10</td>
+                                        <td>resourceType参数填写不属于RESOURCE_*常量之一，或者填写的数量不正确。</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 876px">
+                        <pre><code class="javascript">let hostileCreeps = getObjectsByPrototype(Creep).filter(i => !i.my);
+let target = creep.findClosestByRange(hostileCreeps);
+if (target){
+    creep.move(target);
+    creep.attack(target);
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 233px">
+                        <pre><code class="javascript">let myConstructionSites = getObjectsByPrototype(ConstructionSite).filter(i => i.my);
+let target = creep.findClosestByRange(myConstructionSites);
+if (target) {
+    if (creep.build(target) == ERR_NOT_IN_RANGE) {
+        creep.move(target);
+    }
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 249px">
+                            <pre><code class="javascript">creep.drop(RESOURCE_ENERGY);</code></pre>
+                        </div>
+                        <div style="padding-top: 295px">
+                        <pre><code class="javascript">let activeSources = getObjectsByPrototype(Source).filter(i => i.energy > 0);
+let source = creep.findClosestByRange(activeSources);
+if(source){
+    if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
+        creep.move(source);
+    }
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 234px">
+                        <pre><code class="javascript">let creeps = getObjectsByPrototype(Creep);
+let myDamagedCreeps = creeps.filter(i => i.my && i.hits < i.hitsMax);
+let target = tower.findClosestByRange(myDamagedCreeps);
+if (creep.heal(target) == ERR_NOT_IN_RANGE) {
+    creep.moveTo(target);
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 218px">
+                            <pre><code class="javascript">creep.move(RIGHT);</code></pre>
+                        </div>
+                        <div style="padding-top: 310px">
+                        <pre><code class="javascript">creep1.moveTo(creep2);
+creep2.moveTo({x: 50, y: 50});</code></pre>
+                        </div>
+                        <div style="padding-top: 262px">
+                        <pre><code class="javascript">let resources = getObjectsByPrototype(Resource);
+let target = creep.findClosestByRange(resources);
+if (target) {
+    if (creep.pickup(target) == ERR_NOT_IN_RANGE) {
+        creep.moveTo(target);
+    }
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 202px">
+                        <pre><code class="javascript">creep1.move(TOP);
+creep1.pull(creep2);
+creep2.moveTo(creep1);</code></pre>
+                        </div>
+                        <div style="padding-top: 232px">
+                        <pre><code class="javascript">let hostileCreeps = getObjectsByPrototype(Creep).filter(i => !i.my);
+let targets = creep.findInRange(hostileCreeps);
+if (targets.length) {
+    creep.rangedAttack(targets[0]);
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 248px">
+                        <pre><code class="javascript">let creeps = getObjectsByPrototype(Creep);
+let myDamagedCreeps = creeps.filter(i => i.my && i.hits < i.hitsMax);
+let targets = creep.findInRange(myDamagedCreeps);
+if (targets.length) {
+    creep.rangedHeal(targets[0]);
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 438px">
+                        <pre><code class="javascript">if (creep.transfer(tower, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+    creep.moveTo(tower);
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 423px">
+                        <pre><code class="javascript">if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+    creep.moveTo(container);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24" id="objects-GameObject">GameObject</span><span style="color: gray;" class="f16">class
+                            </span></p>
+                        <p class="f12">游戏对象的基类，所有的对象和类都继承自这个类</p>
+                        <div class="content-inside" id="gameObject-exists">
+                            <p class="f16"><a class="head" href="#gameObject-exists">exists</a><span style="color: gray;" class="f12">boolean</span></p>
+                            <p class="f12">如果当前对象存在于游戏中，则返回true。在游戏刷新缓存时或创建新对象时可以检查该属性【ps：比如new了一个Creep的时候】</p>
+                        </div>
+                        <div class="content-inside" id="gameObject-id">
+                            <p class="f16"><a class="head" href="#gameObject-id">id</a><span style="color: gray;" class="f12">string</span></p>
+                            <p class="f12">可以通过<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/getObjectById/">getObjectById</a>函数找到该对象的唯一ID</p>
+                        </div>
+                        <div class="content-inside" id="gameObject-ticksToDecay">
+                            <p class="f16"><a class="head" href="#gameObject-ticksToDecay">ticksToDecay</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">如果该对象已被定义，则该对象将在该数量的tick后被销毁。</p>
+                        </div>
+                        <div class="content-inside" id="gameObject-x">
+                            <p class="f16"><a class="head" href="#gameObject-x">x</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">该对象目前处于房间区块的x坐标</p>
+                        </div>
+                        <div class="content-inside" id="gameObject-y">
+                            <p class="f16"><a class="head" href="#gameObject-y">y</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">该对象目前处于房间区块的y坐标</p>
+                        </div>
+                        <div class="content-inside" id="gameObject-findClosestByPath">
+                            <p class="f16"><a class="head" href="#gameObject-findClosestByPath">findClosestByPath</a><span style="color: white;">(</span><span class="tch">position</span><span style="color: white;">, </span><span class="tch">[opts]</span><span style="color: white;">)</span></p>
+                            <p class="f12">找到给定参数中路径与该GameObject最短的那一个对象的位置。（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findClosestByPath/">findClosestByPath</a>）</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">positions</td>
+                                        <td><span style="color: gray">array</span></td>
+                                        <td>要搜索的对象数组，内容须是GameObject或任何包含x和y属性的对象数组。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">opts (optional)</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>包含了<a class="cost" href="../../functions/searchPath/">searchPath</a>函数支持的其他寻路标志的对象。</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回路径最短的那个对象<b>位置</b>，如果找不到或没有有效位置，则返回null。</p>
+                        </div>
+                        <div class="content-inside" id="gameObject-findClosestByRange">
+                            <p class="f16"><a class="head" href="#gameObject-findClosestByRange">findClosestByRange</a><span style="color: white;">(</span><span class="tch">position</span><span style="color: white;">)</span></p>
+                            <p class="f12">找到给定参数中直线距离与该GameObject最短的那一个对象的位置。（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findClosestByRange/">findClosestByRange</a>）</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">positions</td>
+                                        <td><span style="color: gray">array</span></td>
+                                        <td>要搜索的对象数组，内容须是GameObject或任何包含x和y属性的对象数组。</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回直线距离最短的那个对象<b>位置</b>。</p>
+                        </div>
+                        <div class="content-inside" id="gameObject-findInRange">
+                            <p class="f16"><a class="head" href="#gameObject-findInRange">findInRange</a><span style="color: white;">(</span><span class="tch">position</span><span style="color: white;">, </span><span class="tch">range</span><span style="color: white;">)</span></p>
+                            <p class="f12">查找指定线性范围内的所有对象。（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findInRange/">findInRange</a>）</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">positions</td>
+                                        <td><span style="color: gray">array</span></td>
+                                        <td>要搜索的对象数组，内容须是GameObject或任何包含x和y属性的对象数组。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">range</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>距离范围</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回一个范围内找到的所有对象的数组。</p>
+                        </div>
+                        <div class="content-inside" id="gameObject-findPathTo">
+                            <p class="f16"><a class="head" href="#gameObject-findPathTo">findPathTo</a><span style="color: white;">(</span><span class="tch">pos</span><span style="color: white;">, </span><span class="tch">[opts]</span><span style="color: white;">)</span></p>
+                            <p class="f12">找到从该GameObject到指定参数对象的路径（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findClosestByPath/">findClosestByPath</a>）</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">pos</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>一个包含了x和y属性的对象</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">opts (optional)</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>一个附带着附加属性的对象，这些选项将按照参数传值给<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findPath/">findPath</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回一个包含x和y属性的对象数组找到的路径</p>
+                        </div>
+                        <div class="content-inside" id="gameObject-getRangeTo">
+                            <p class="f16"><a class="head" href="#gameObject-getRangeTo">getRangeTo</a><span style="color: white;">(</span><span class="tch">pos</span><span style="color: white;">)</span></p>
+                            <p class="f12">请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/getRange/">getRange</a></p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">pos</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>一个包含了x和y属性的对象。</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 1058px">
+                        <pre><code class="javascript">let path = creep.findPathTo(spawn);
+console.log(path.length);</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        <h1>欢迎来到Screeps Arena中文文档！</h1>-->
+<!--        <h3>3秒后跳转到第一章</h3>-->
+<!--        <p>页面跳转中，请稍后……</p>-->
+<!--        <p>如果浏览器没有跳转，请点击右侧链接手动跳转：<a href="./html/objects/arenaInfo/">点我跳转</a></p>-->
     </body>
 </html>
