@@ -473,7 +473,7 @@
                     </div>
                     <div class="content-code" id="creep-pickup">
                         <p class="f16"><a class="head" href="#creep-pickup">pickup</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                        <p class="f12">捡起该区块的一个物品（一个扔掉的资源），需要该Creep具有<a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a>属性。目标必须位于该Creep的相邻区块内</p>
+                        <p class="f12">捡起该区块的一个物品（一个扔掉的资源），需要该Creep具有<a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a>属性。目标必须位于该Creep的相邻区块或位于同一区块内</p>
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <thead>
@@ -486,13 +486,8 @@
                                 <tbody>
                                 <tr>
                                     <td style="color: #f05654;">target</td>
-                                    <td><span style="color: gray">object</span></td>
-                                    <td>可以是<a class="cost" href="../GameObject/">GameObject</a>或者任何包含了x和y属性的对象</td>
-                                </tr>
-                                <tr>
-                                    <td style="color: #f05654;">opts</td>
-                                    <td><span style="color: gray">object</span></td>
-                                    <td>一个附带着附加属性的对象，这些选项将按照参数传值给<a class="cost" href="#">game/utils</a> <a class="cost" href="../../functions/findPath/">findPath</a></td>
+                                    <td><a class="cp carry" href="../Resource/">Resource</a></td>
+                                    <td>要拾取的目标对象</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -511,14 +506,19 @@
                                     <td>该Creep不属于你</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_TIRED</a></td>
-                                    <td>-11</td>
-                                    <td>该Creep的疲劳值大于0，无法移动</td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_INVALID_TARGET</a></td>
+                                    <td>-7</td>
+                                    <td>目标不是一个有效的Creep对象</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
-                                    <td>-12</td>
-                                    <td>你的Creep属性列表没有包含MOVE属性</td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_FULL</a></td>
+                                    <td>-8</td>
+                                    <td>该Creep已经不能接收更多的资源了（已经满了）</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NOT_IN_RANGE</a></td>
+                                    <td>-9</td>
+                                    <td>目标太远了</td>
                                 </tr>
                             </table>
                         </div>
