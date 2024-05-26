@@ -30,38 +30,38 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp move" href="#">MOVE</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#">50</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">50</a></td>
                                     <td style="border-bottom: 1px solid gray;">每刻减少2点疲劳值</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp work" href="#">WORK</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#">100</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp work" href="../../constants/all/#constants-WORK">WORK</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">100</a></td>
                                     <td style="border-bottom: 1px solid gray;">每刻从一个能量源抓取2点能量单元<br>每刻构建一个可容纳5点能源单元的结构</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp carry" href="#">CARRY</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#">50</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">50</a></td>
                                     <td style="border-bottom: 1px solid gray;">最多可以容纳50个资源单元</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp attack" href="#">ATTACK</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#">80</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp attack" href="../../constants/all/#constants-all-ATTACK">ATTACK</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">80</a></td>
                                     <td style="border-bottom: 1px solid gray;">攻击其他的Creep、结构，用短距离每刻攻击30次</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp ranged" href="#">RANGED_ATTACK</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#">150</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp ranged" href="../../constants/all/#constants-all-RANGED_ATTACK">RANGED_ATTACK</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">150</a></td>
                                     <td style="border-bottom: 1px solid gray;">攻击其他的Creep、结构，用3格远长距离每刻攻击10次<br>攻击3格范围内所有Creep、结构，命中1-4-10次【取决于格数】</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp heal" href="#">HEAL</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#">250</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp heal" href="../../constants/all/#constants-all-HEAL">HEAL</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">250</a></td>
                                     <td style="border-bottom: 1px solid gray;">治疗自身或另一个Creep，在短距离内每刻治疗12次，远距离每刻治疗4次</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp touch" href="#">TOUCH</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#">10</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp touch" href="../../constants/all/#constants-all-TOUCH">TOUCH</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">10</a></td>
                                     <td style="border-bottom: 1px solid gray;">没有任何效果，只是对Creep增加了额外的命中点。（ps：就一占位符）</td>
                                 </tr>
                             </tbody>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="content-code" id="creep-attack">
                         <p class="f16"><a class="head" href="#creep-attack">attack</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                        <p class="f12">使用近战攻击邻近的另一个Creep或结构。需要该Creep具有<a class="cp attack" href="#">ATTACK</a>属性。如果要攻击的目标位于墙壁内，则会攻击该墙壁。要攻击的目标必须位于Creep的相邻区块中。</p>
+                        <p class="f12">使用近战攻击邻近的另一个Creep或结构。需要该Creep具有<a class="cp attack" href="../../constants/all/#constants-all-ATTACK">ATTACK</a>属性。如果要攻击的目标位于墙壁内，则会攻击该墙壁。要攻击的目标必须位于Creep的相邻区块中。</p>
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <thead>
@@ -122,27 +122,27 @@
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <tr>
-                                    <td style="width: 120px;"><a class="cl cp" href="#">OK</a></td>
+                                    <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
                                     <td style="width: 20px;">0</td>
                                     <td style="width: 280px;">操作已成功执行</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_OWNER</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                     <td>-1</td>
                                     <td>该Creep不属于你</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_INVALID_TARGET</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                     <td>-7</td>
                                     <td>目标不属于可被攻击的对象</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_IN_RANGE</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                     <td>-9</td>
                                     <td>目标太远啦</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NO_BODYPART</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                     <td>-12</td>
                                     <td>这个Creep的属性列表里并没有ATTACK（攻击）属性</td>
                                 </tr>
@@ -151,7 +151,7 @@
                     </div>
                     <div class="content-code" id="creep-build">
                         <p class="f16"><a class="head" href="#creep-build">build</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                        <p class="f12">使用该Creep携带的能量在目标区块建造一个结构。需要该Creep具有<a class="cp work" href="#">WORK</a>和<a class="cp carry" href="#">CARRY</a>属性。目标区块必须在Creep的3个区块范围以内。</p>
+                        <p class="f12">使用该Creep携带的能量在目标区块建造一个结构。需要该Creep具有<a class="cp work" href="../../constants/all/#constants-all-WORK">WORK</a>和<a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a>属性。目标区块必须在Creep的3个区块范围以内。</p>
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <thead>
@@ -174,32 +174,32 @@
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <tr>
-                                    <td style="width: 120px;"><a class="cl cp" href="#">OK</a></td>
+                                    <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
                                     <td style="width: 20px;">0</td>
                                     <td style="width: 280px;">操作已成功执行</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_OWNER</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                     <td>-1</td>
                                     <td>该Creep不属于你</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
                                     <td>-6</td>
                                     <td>该Creep没有足够多的搬运能量</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_INVALID_TARGET</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                     <td>-7</td>
                                     <td>目标不是可以被建造的单位，或者是你无法在此处建造结构（可能是因为你要建造的区块有障碍物）</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_IN_RANGE</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                     <td>-9</td>
                                     <td>目标太远啦</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NO_BODYPART</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                     <td>-12</td>
                                     <td>这个Creep的属性列表里并没有WORK（攻击）属性</td>
                                 </tr>
@@ -236,22 +236,22 @@
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <tr>
-                                    <td style="width: 120px;"><a class="cl cp" href="#">OK</a></td>
+                                    <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
                                     <td style="width: 20px;">0</td>
                                     <td style="width: 280px;">操作已成功执行</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_OWNER</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                     <td>-1</td>
                                     <td>该Creep不属于你</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
                                     <td>-6</td>
                                     <td>该Creep没有该数量那么多的资源要置于地上</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_INVALID_ARGS</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
                                     <td>-10</td>
                                     <td>resourceType参数有误，并不是有效的RESOURCE_*常量之一</td>
                                 </tr>
@@ -260,7 +260,7 @@
                     </div>
                     <div class="content-code" id="creep-harvest">
                         <p class="f16"><a class="head" href="#creep-harvest">harvest</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                        <p class="f12">从能量源区块获取能量，需要该Creep具有<a class="cp work" href="#">WORK</a>属性，如果该Creep具有<a class="cp carry" href="#">CARRY</a>属性，将会把收集的资源置入身体里，否则资源将会掉落在相邻的地面上。目标必须位于该Creep的相邻区块内</p>
+                        <p class="f12">从能量源区块获取能量，需要该Creep具有<a class="cp work" href="../../constants/all/#constants-all-WORK">WORK</a>属性，如果该Creep具有<a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a>属性，将会把收集的资源置入身体里，否则资源将会掉落在相邻的地面上。目标必须位于该Creep的相邻区块内</p>
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <thead>
@@ -283,32 +283,32 @@
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <tr>
-                                    <td style="width: 120px;"><a class="cl cp" href="#">OK</a></td>
+                                    <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
                                     <td style="width: 20px;">0</td>
                                     <td style="width: 280px;">操作已成功执行</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_OWNER</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                     <td>-1</td>
                                     <td>该Creep不属于你</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
                                     <td>-6</td>
                                     <td>目标不包含任何可收集的资源</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_INVALID_TARGET</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                     <td>-7</td>
                                     <td>目标不属于可以被收集资源的对象</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_IN_RANGE</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                     <td>-9</td>
                                     <td>目标太远啦</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NO_BODYPART</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                     <td>-12</td>
                                     <td>你的Creep属性列表没有包含WORK属性</td>
                                 </tr>
@@ -317,7 +317,7 @@
                     </div>
                     <div class="content-code" id="creep-heal">
                         <p class="f16"><a class="head" href="#creep-heal">heal</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                        <p class="f12">治疗自己或其他己方的Creep，它将恢复Creep们受到伤害的部分，并恢复血量。需要该Creep具有<a class="cp heal" href="#">HEAL</a>属性，目标必须位于该Creep的相邻区块内</p>
+                        <p class="f12">治疗自己或其他己方的Creep，它将恢复Creep们受到伤害的部分，并恢复血量。需要该Creep具有<a class="cp heal" href="../../constants/all/#constants-all-HEAL">HEAL</a>属性，目标必须位于该Creep的相邻区块内</p>
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <thead>
@@ -340,27 +340,27 @@
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <tr>
-                                    <td style="width: 120px;"><a class="cl cp" href="#">OK</a></td>
+                                    <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
                                     <td style="width: 20px;">0</td>
                                     <td style="width: 280px;">操作已成功执行</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_OWNER</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                     <td>-1</td>
                                     <td>该Creep不属于你</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_INVALID_TARGET</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                     <td>-7</td>
                                     <td>目标不是有效的Creep对象</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_IN_RANGE</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                     <td>-9</td>
                                     <td>目标太远啦</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NO_BODYPART</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                     <td>-12</td>
                                     <td>你的Creep属性列表没有包含HEAL属性</td>
                                 </tr>
@@ -369,7 +369,7 @@
                     </div>
                     <div class="content-code" id="creep-move">
                         <p class="f16"><a class="head" href="#creep-move">move</a><span style="color: white;">(</span><span class="tch">direction</span><span style="color: white;">)</span></p>
-                        <p class="f12">将该Creep沿指定方向一直移动，直到撞到墙壁。需要该Creep具有<a class="cp move" href="#">MOVE</a>属性</p>
+                        <p class="f12">将该Creep沿指定方向一直移动，直到撞到墙壁。需要该Creep具有<a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a>属性</p>
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <thead>
@@ -383,7 +383,7 @@
                                 <tr>
                                     <td style="color: #f05654;">direction</td>
                                     <td><span style="color: gray">number</span></td>
-                                    <td>支持以下常量之一<br><a class="cl cp" href="#">TOP</a> <a class="cl cp" href="#">TOP_RIGHT</a> <a class="cl cp" href="#">RIGHT</a> <a class="cl cp" href="#">BOTTOM_RIGHT</a> <a class="cl cp" href="#">BOTTOM</a> <a class="cl cp" href="#">BOTTOM_LEFT</a> <a class="cl cp" href="#">LEFT</a> <a class="cl cp" href="#">TOP_LEFT</a></td>
+                                    <td>支持以下常量之一<br><a class="cl cp" href="../../constants/all/#constants-all-TOP">TOP</a> <a class="cl cp" href="../../constants/all/#constants-all-TOP_RIGHT">TOP_RIGHT</a> <a class="cl cp" href="../../constants/all/#constants-all-RIGHT">RIGHT</a> <a class="cl cp" href="../../constants/all/#constants-all-BOTTOM_RIGHT">BOTTOM_RIGHT</a> <a class="cl cp" href="../../constants/all/#constants-all-BOTTOM">BOTTOM</a> <a class="cl cp" href="../../constants/all/#constants-all-BOTTOM_LEFT">BOTTOM_LEFT</a> <a class="cl cp" href="../../constants/all/#constants-all-LEFT">LEFT</a> <a class="cl cp" href="../../constants/all/#constants-all-TOP_LEFT">TOP_LEFT</a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -392,27 +392,27 @@
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <tr>
-                                    <td style="width: 120px;"><a class="cl cp" href="#">OK</a></td>
+                                    <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
                                     <td style="width: 20px;">0</td>
                                     <td style="width: 280px;">操作已成功执行</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_OWNER</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                     <td>-1</td>
                                     <td>该Creep不属于你</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_INVALID_ARGS</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
                                     <td>-10</td>
                                     <td>输入的方向常量不正确</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_TIRED</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_TIRED</a></td>
                                     <td>-11</td>
                                     <td>该Creep的疲劳值大于0，无法移动</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NO_BODYPART</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                     <td>-12</td>
                                     <td>你的Creep属性列表没有包含MOVE属性</td>
                                 </tr>
@@ -421,7 +421,7 @@
                     </div>
                     <div class="content-code" id="creep-moveTo">
                         <p class="f16"><a class="head" href="#creep-moveTo">moveTo</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">, </span><span class="tch">opts</span><span style="color: white;">)</span></p>
-                        <p class="f12">找到到达目标区块的最佳路径，并尝试移动到该目标区块。需要该Creep具有<a class="cp move" href="#">MOVE</a>属性</p>
+                        <p class="f12">找到到达目标区块的最佳路径，并尝试移动到该目标区块。需要该Creep具有<a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a>属性</p>
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <thead>
@@ -449,22 +449,22 @@
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <tr>
-                                    <td style="width: 120px;"><a class="cl cp" href="#">OK</a></td>
+                                    <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
                                     <td style="width: 20px;">0</td>
                                     <td style="width: 280px;">操作已成功执行</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_OWNER</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                     <td>-1</td>
                                     <td>该Creep不属于你</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_TIRED</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_TIRED</a></td>
                                     <td>-11</td>
                                     <td>该Creep的疲劳值大于0，无法移动</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NO_BODYPART</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                     <td>-12</td>
                                     <td>你的Creep属性列表没有包含MOVE属性</td>
                                 </tr>
@@ -473,7 +473,7 @@
                     </div>
                     <div class="content-code" id="creep-pickup">
                         <p class="f16"><a class="head" href="#creep-pickup">pickup</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                        <p class="f12">捡起该区块的一个物品（一个扔掉的资源），需要该Creep具有<a class="cp carry" href="#">CARRY</a>属性。目标必须位于该Creep的相邻区块内</p>
+                        <p class="f12">捡起该区块的一个物品（一个扔掉的资源），需要该Creep具有<a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a>属性。目标必须位于该Creep的相邻区块内</p>
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <thead>
@@ -501,22 +501,22 @@
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <tr>
-                                    <td style="width: 120px;"><a class="cl cp" href="#">OK</a></td>
+                                    <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
                                     <td style="width: 20px;">0</td>
                                     <td style="width: 280px;">操作已成功执行</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NOT_OWNER</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                     <td>-1</td>
                                     <td>该Creep不属于你</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_TIRED</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_TIRED</a></td>
                                     <td>-11</td>
                                     <td>该Creep的疲劳值大于0，无法移动</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="cl cp" href="#">ERR_NO_BODYPART</a></td>
+                                    <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                     <td>-12</td>
                                     <td>你的Creep属性列表没有包含MOVE属性</td>
                                 </tr>
