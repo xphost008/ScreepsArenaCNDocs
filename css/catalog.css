@@ -110,12 +110,54 @@ a.heal:visited {
     text-decoration: none;
     color: #66ff00;
 }
-a.touch:link {
+a.tough:link {
     text-decoration: none;
     color: white;
 }
-a.touch:visited {
+a.tough:visited {
     text-decoration: none;
+    color: white;
+}
+a.all-move:link {
+    color: gray;
+}
+a.all-move:visited {
+    color: gray;
+}
+a.all-work:link {
+    color: yellow;
+}
+a.all-work:visited {
+    color: yellow;
+}
+a.all-carry:link {
+    color: rgb(119, 119, 119);
+}
+a.all-carry:visited {
+    color: rgb(119, 119, 119);
+}
+a.all-attack:link {
+    color: red;
+}
+a.all-attack:visited {
+    color: red;
+}
+a.all-ranged:link {
+    color: skyblue;
+}
+a.all-ranged:visited {
+    color: skyblue;
+}
+a.all-heal:link {
+    color: #66ff00;
+}
+a.all-heal:visited {
+    color: #66ff00;
+}
+a.all-tough:link {
+    color: white;
+}
+a.all-tough:visited {
     color: white;
 }
 a.cp:active {
@@ -124,6 +166,12 @@ a.cp:active {
 }
 a.cp:hover {
     text-decoration: none;
+    color: #6394f8;
+}
+a.all-cp:hover {
+    color: #6394f8;
+}
+a.all-cp:active {
     color: #6394f8;
 }
 a.cost:link {
