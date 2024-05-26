@@ -17,9 +17,9 @@
                 <iframe class="clct" src="./catalog.html" frameborder="0"></iframe>
             </div>
             <div class="content-right">
-                <div class="content-chapter">
+                <div class="content-chapter" id="objects-arenaInfo">
                     <div class="content-desc">
-                        <p><span style="color: #6394f8;" class="f24" id="objects-arenaInfo">arenaInfo</span><span style="color: gray;" class="f16">object</span></p>
+                        <p><span style="color: #6394f8;" class="f24">arenaInfo</span><span style="color: gray;" class="f16">object</span></p>
                         <div class="content-inside" id="arenaInfo-name">
                             <p class="f16"><a class="head" href="#arenaInfo-name">name</a><span style="color: gray;" class="f12">string</span></p>
                             <p class="f12">竞技场的名字</p>
@@ -54,9 +54,9 @@ export function loop(){
                         </div>
                     </div>
                 </div>
-                <div class="content-chapter">
+                <div class="content-chapter" id="objects-ConstructionSite">
                     <div class="content-desc">
-                        <p><span style="color: #6394f8;" class="f24" id="objects-ConstructionSite">ConstructionSite</span><span style="color: gray;" class="f16">class extends GameObject
+                        <p><span style="color: #6394f8;" class="f24">ConstructionSite</span><span style="color: gray;" class="f16">class extends GameObject
                     </span></p>
                         <p class="f12">一个正在建筑中的结构空位，要在该空位上建造一个结构，你需要给附有 WORK 属性的creep一些能量，并且执行build功能。</p>
                         <div class="content-inside" id="constructionSite-my">
@@ -72,7 +72,7 @@ export function loop(){
                             <p class="f12">场上要建筑的结构的总进度</p>
                         </div>
                         <div class="content-inside" id="constructionSite-structure">
-                            <p class="f16"><a class="head" href="#constructionSite-structure">structure</a><span style="color: gray;" class="f12"><a class="hl" href="../Structure/">Structure</a></span></p>
+                            <p class="f16"><a class="head" href="#constructionSite-structure">structure</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Structure">Structure</a></span></p>
                             <p class="f12">建造的结构（当该结构建完成时）</p>
                         </div>
                         <div class="content-inside" id="constructionSite-remove">
@@ -86,9 +86,9 @@ export function loop(){
                         </div>
                     </div>
                 </div>
-                <div class="content-chapter">
+                <div class="content-chapter" id="objects-Creep">
                     <div class="content-desc">
-                        <p><span style="color: #6394f8;" class="f24" id="objects-Creep">Creep</span><span style="color: gray;" class="f16">class extends GameObject</span></p>
+                        <p><span style="color: #6394f8;" class="f24">Creep</span><span style="color: gray;" class="f16">class extends GameObject</span></p>
                         <p class="f12">Creep们是你的工作单位，Creep们可以移动、抓取能量、建造结构、攻击其他人的Creep以及执行很多别的功能。每个Creep最多可以拥有50个bodyPart（属性【下同】）构成，可以有以下几种类型：</p>
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
@@ -101,38 +101,38 @@ export function loop(){
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">50</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp move" href="#constants-all-MOVE">MOVE</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#constants-all-BODYPART_COST">50</a></td>
                                     <td style="border-bottom: 1px solid gray;">每刻减少2点疲劳值</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp work" href="../../constants/all/#constants-WORK">WORK</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">100</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp work" href="#constants-WORK">WORK</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#constants-all-BODYPART_COST">100</a></td>
                                     <td style="border-bottom: 1px solid gray;">每刻从一个能量源抓取2点能量单元<br>每刻构建一个可容纳5点能源单元的结构</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">50</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp carry" href="#constants-all-CARRY">CARRY</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#constants-all-BODYPART_COST">50</a></td>
                                     <td style="border-bottom: 1px solid gray;">最多可以容纳50个资源单元</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp attack" href="../../constants/all/#constants-all-ATTACK">ATTACK</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">80</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp attack" href="#constants-all-ATTACK">ATTACK</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#constants-all-BODYPART_COST">80</a></td>
                                     <td style="border-bottom: 1px solid gray;">攻击其他的Creep、结构，用短距离每刻攻击30次</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp ranged" href="../../constants/all/#constants-all-RANGED_ATTACK">RANGED_ATTACK</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">150</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp ranged" href="#constants-all-RANGED_ATTACK">RANGED_ATTACK</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#constants-all-BODYPART_COST">150</a></td>
                                     <td style="border-bottom: 1px solid gray;">攻击其他的Creep、结构，用3格远长距离每刻攻击10次<br>攻击3格范围内所有Creep、结构，命中1-4-10次【取决于格数】</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp heal" href="../../constants/all/#constants-all-HEAL">HEAL</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">250</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp heal" href="#constants-all-HEAL">HEAL</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#constants-all-BODYPART_COST">250</a></td>
                                     <td style="border-bottom: 1px solid gray;">治疗自身或另一个Creep，在短距离内每刻治疗12次，远距离每刻治疗4次</td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cp tough" href="../../constants/all/#constants-all-TOUGH">TOUGH</a></td>
-                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="../../constants/all/#constants-all-BODYPART_COST">10</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cp tough" href="#constants-all-TOUGH">TOUGH</a></td>
+                                    <td style="border-bottom: 1px solid gray;"><a class="cost" href="#constants-all-BODYPART_COST">10</a></td>
                                     <td style="border-bottom: 1px solid gray;">没有任何效果，只是对Creep增加了额外的命中点。（ps：就一占位符）</td>
                                 </tr>
                                 </tbody>
@@ -165,12 +165,12 @@ export function loop(){
                             <p class="f12">属于你自己的Creep</p>
                         </div>
                         <div class="content-inside" id="creep-store">
-                            <p class="f16"><a class="head" href="#creep-store">store</a><span style="color: gray;" class="f12"><a class="hl" href="../Store/">Store</a></span></p>
+                            <p class="f16"><a class="head" href="#creep-store">store</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Store">Store</a></span></p>
                             <p class="f12">一个存储容器对象，包含目前该Creep所拥有的货物</p>
                         </div>
                         <div class="content-inside" id="creep-attack">
                             <p class="f16"><a class="head" href="#creep-attack">attack</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                            <p class="f12">使用近战攻击邻近的另一个Creep或结构。需要该Creep具有<a class="cp attack" href="../../constants/all/#constants-all-ATTACK">ATTACK</a>属性。如果要攻击的目标位于墙壁内，则会攻击该墙壁。要攻击的目标必须位于Creep的相邻区块中。</p>
+                            <p class="f12">使用近战攻击邻近的另一个Creep或结构。需要该Creep具有<a class="cp attack" href="#constants-all-ATTACK">ATTACK</a>属性。如果要攻击的目标位于墙壁内，则会攻击该墙壁。要攻击的目标必须位于Creep的相邻区块中。</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -183,7 +183,7 @@ export function loop(){
                                     <tbody>
                                     <tr>
                                         <td style="color: #f05654;">target</td>
-                                        <td><a class="cp carry" href="../Creep/">Creep</a><br><a class="cp carry" href="../Structure/">Structure</a></td>
+                                        <td><a class="cp carry" href="#objects-Creep">Creep</a><br><a class="cp carry" href="#objects-Structure">Structure</a></td>
                                         <td>要攻击的目标对象</td>
                                     </tr>
                                     </tbody>
@@ -193,27 +193,27 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                         <td>-7</td>
                                         <td>目标不属于可被攻击的对象</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                         <td>-9</td>
                                         <td>目标太远啦</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                         <td>-12</td>
                                         <td>这个Creep的属性列表里并没有ATTACK（攻击）属性</td>
                                     </tr>
@@ -222,7 +222,7 @@ export function loop(){
                         </div>
                         <div class="content-inside" id="creep-build">
                             <p class="f16"><a class="head" href="#creep-build">build</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                            <p class="f12">使用该Creep携带的能量在目标区块建造一个结构。需要该Creep具有<a class="cp work" href="../../constants/all/#constants-all-WORK">WORK</a>和<a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a>属性。目标区块必须在Creep的3个区块范围以内。</p>
+                            <p class="f12">使用该Creep携带的能量在目标区块建造一个结构。需要该Creep具有<a class="cp work" href="#constants-all-WORK">WORK</a>和<a class="cp carry" href="#constants-all-CARRY">CARRY</a>属性。目标区块必须在Creep的3个区块范围以内。</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -235,7 +235,7 @@ export function loop(){
                                     <tbody>
                                     <tr>
                                         <td style="color: #f05654;">target</td>
-                                        <td><a class="cp carry" href="../ConstructionSite/">ConstructionSite</a></td>
+                                        <td><a class="cp carry" href="#objects-ConstructionSite">ConstructionSite</a></td>
                                         <td>要建造的目标建筑描述</td>
                                     </tr>
                                     </tbody>
@@ -245,32 +245,32 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
                                         <td>-6</td>
                                         <td>该Creep没有足够多的搬运能量</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                         <td>-7</td>
                                         <td>目标不是可以被建造的单位，或者是你无法在此处建造结构（可能是因为你要建造的区块有障碍物）</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                         <td>-9</td>
                                         <td>目标太远啦</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                         <td>-12</td>
                                         <td>这个Creep的属性列表里并没有WORK（攻击）属性</td>
                                     </tr>
@@ -307,22 +307,22 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
                                         <td>-6</td>
                                         <td>该Creep没有该数量那么多的资源要置于地上</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
                                         <td>-10</td>
                                         <td>resourceType参数有误，并不是有效的RESOURCE_*常量之一</td>
                                     </tr>
@@ -331,7 +331,7 @@ export function loop(){
                         </div>
                         <div class="content-inside" id="creep-harvest">
                             <p class="f16"><a class="head" href="#creep-harvest">harvest</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                            <p class="f12">从能量源区块获取能量，需要该Creep具有<a class="cp work" href="../../constants/all/#constants-all-WORK">WORK</a>属性，如果该Creep具有<a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a>属性，将会把收集的资源置入身体里，否则资源将会掉落在相邻的地面上。目标必须位于该Creep的相邻区块内</p>
+                            <p class="f12">从能量源区块获取能量，需要该Creep具有<a class="cp work" href="#constants-all-WORK">WORK</a>属性，如果该Creep具有<a class="cp carry" href="#constants-all-CARRY">CARRY</a>属性，将会把收集的资源置入身体里，否则资源将会掉落在相邻的地面上。目标必须位于该Creep的相邻区块内</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -344,7 +344,7 @@ export function loop(){
                                     <tbody>
                                     <tr>
                                         <td style="color: #f05654;">target</td>
-                                        <td><a class="cp carry" href="../Source/">Source</a></td>
+                                        <td><a class="cp carry" href="#objects-Source">Source</a></td>
                                         <td>要收集的资源对象</td>
                                     </tr>
                                     </tbody>
@@ -354,32 +354,32 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a></td>
                                         <td>-6</td>
                                         <td>目标不包含任何可收集的资源</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                         <td>-7</td>
                                         <td>目标不属于可以被收集资源的对象</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                         <td>-9</td>
                                         <td>目标太远啦</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                         <td>-12</td>
                                         <td>你的Creep属性列表没有包含WORK属性</td>
                                     </tr>
@@ -388,7 +388,7 @@ export function loop(){
                         </div>
                         <div class="content-inside" id="creep-heal">
                             <p class="f16"><a class="head" href="#creep-heal">heal</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                            <p class="f12">治疗自己或其他己方的Creep，它将恢复Creep们受到伤害的部分，并恢复血量。需要该Creep具有<a class="cp heal" href="../../constants/all/#constants-all-HEAL">HEAL</a>属性，目标必须位于该Creep的相邻区块内</p>
+                            <p class="f12">治疗自己或其他己方的Creep，它将恢复Creep们受到伤害的部分，并恢复血量。需要该Creep具有<a class="cp heal" href="#constants-all-HEAL">HEAL</a>属性，目标必须位于该Creep的相邻区块内</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -401,7 +401,7 @@ export function loop(){
                                     <tbody>
                                     <tr>
                                         <td style="color: #f05654;">target</td>
-                                        <td><a class="cp carry" href="../Creep/">Creep</a></td>
+                                        <td><a class="cp carry" href="#objects-Creep">Creep</a></td>
                                         <td>要治疗的目标对象</td>
                                     </tr>
                                     </tbody>
@@ -411,27 +411,27 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                         <td>-7</td>
                                         <td>目标不是有效的Creep对象</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                         <td>-9</td>
                                         <td>目标太远啦</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                         <td>-12</td>
                                         <td>你的Creep属性列表没有包含HEAL属性</td>
                                     </tr>
@@ -440,7 +440,7 @@ export function loop(){
                         </div>
                         <div class="content-inside" id="creep-move">
                             <p class="f16"><a class="head" href="#creep-move">move</a><span style="color: white;">(</span><span class="tch">direction</span><span style="color: white;">)</span></p>
-                            <p class="f12">将该Creep沿指定方向一直移动，直到撞到墙壁。需要该Creep具有<a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a>属性</p>
+                            <p class="f12">将该Creep沿指定方向一直移动，直到撞到墙壁。需要该Creep具有<a class="cp move" href="#constants-all-MOVE">MOVE</a>属性</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -454,7 +454,7 @@ export function loop(){
                                     <tr>
                                         <td style="color: #f05654;">direction</td>
                                         <td><span style="color: gray">number</span></td>
-                                        <td>支持以下常量之一<br><a class="cl cp" href="../../constants/all/#constants-all-TOP">TOP</a> <a class="cl cp" href="../../constants/all/#constants-all-TOP_RIGHT">TOP_RIGHT</a> <a class="cl cp" href="../../constants/all/#constants-all-RIGHT">RIGHT</a> <a class="cl cp" href="../../constants/all/#constants-all-BOTTOM_RIGHT">BOTTOM_RIGHT</a> <a class="cl cp" href="../../constants/all/#constants-all-BOTTOM">BOTTOM</a> <a class="cl cp" href="../../constants/all/#constants-all-BOTTOM_LEFT">BOTTOM_LEFT</a> <a class="cl cp" href="../../constants/all/#constants-all-LEFT">LEFT</a> <a class="cl cp" href="../../constants/all/#constants-all-TOP_LEFT">TOP_LEFT</a></td>
+                                        <td>支持以下常量之一<br><a class="cl cp" href="#constants-all-TOP">TOP</a> <a class="cl cp" href="#constants-all-TOP_RIGHT">TOP_RIGHT</a> <a class="cl cp" href="#constants-all-RIGHT">RIGHT</a> <a class="cl cp" href="#constants-all-BOTTOM_RIGHT">BOTTOM_RIGHT</a> <a class="cl cp" href="#constants-all-BOTTOM">BOTTOM</a> <a class="cl cp" href="#constants-all-BOTTOM_LEFT">BOTTOM_LEFT</a> <a class="cl cp" href="#constants-all-LEFT">LEFT</a> <a class="cl cp" href="#constants-all-TOP_LEFT">TOP_LEFT</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -463,27 +463,27 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
                                         <td>-10</td>
                                         <td>输入的方向常量不正确</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_TIRED</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_TIRED">ERR_TIRED</a></td>
                                         <td>-11</td>
                                         <td>该Creep的疲劳值大于0，无法移动</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                         <td>-12</td>
                                         <td>你的Creep属性列表没有包含MOVE属性</td>
                                     </tr>
@@ -492,7 +492,7 @@ export function loop(){
                         </div>
                         <div class="content-inside" id="creep-moveTo">
                             <p class="f16"><a class="head" href="#creep-moveTo">moveTo</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">, </span><span class="tch">opts</span><span style="color: white;">)</span></p>
-                            <p class="f12">找到到达目标区块的最佳路径，并尝试移动到该目标区块。需要该Creep具有<a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a>属性</p>
+                            <p class="f12">找到到达目标区块的最佳路径，并尝试移动到该目标区块。需要该Creep具有<a class="cp move" href="#constants-all-MOVE">MOVE</a>属性</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -506,12 +506,12 @@ export function loop(){
                                     <tr>
                                         <td style="color: #f05654;">target</td>
                                         <td><span style="color: gray">object</span></td>
-                                        <td>可以是<a class="cost" href="../GameObject/">GameObject</a>或者任何包含了x和y属性的对象</td>
+                                        <td>可以是<a class="cost" href="#objects-GameObject">GameObject</a>或者任何包含了x和y属性的对象</td>
                                     </tr>
                                     <tr>
                                         <td style="color: #f05654;">opts</td>
                                         <td><span style="color: gray">object</span></td>
-                                        <td>一个附带着附加属性的对象，这些选项将按照参数传值给<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findPath/">findPath</a></td>
+                                        <td>一个附带着附加属性的对象，这些选项将按照参数传值给<a class="cl" href="#">game/utils</a> <a class="cost" href="#functions-findPath">findPath</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -520,22 +520,22 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_TIRED</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_TIRED">ERR_TIRED</a></td>
                                         <td>-11</td>
                                         <td>该Creep的疲劳值大于0，无法移动</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                         <td>-12</td>
                                         <td>你的Creep属性列表没有包含MOVE属性</td>
                                     </tr>
@@ -544,7 +544,7 @@ export function loop(){
                         </div>
                         <div class="content-inside" id="creep-pickup">
                             <p class="f16"><a class="head" href="#creep-pickup">pickup</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                            <p class="f12">捡起该区块的一个物品（一个扔掉的资源），需要该Creep具有<a class="cp carry" href="../../constants/all/#constants-all-CARRY">CARRY</a>属性。目标必须位于该Creep的相邻区块或位于同一区块内</p>
+                            <p class="f12">捡起该区块的一个物品（一个扔掉的资源），需要该Creep具有<a class="cp carry" href="#constants-all-CARRY">CARRY</a>属性。目标必须位于该Creep的相邻区块或位于同一区块内</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -557,7 +557,7 @@ export function loop(){
                                     <tbody>
                                     <tr>
                                         <td style="color: #f05654;">target</td>
-                                        <td><a class="cp carry" href="../Resource/">Resource</a></td>
+                                        <td><a class="cp carry" href="#objects-Resource">Resource</a></td>
                                         <td>要拾取的目标对象</td>
                                     </tr>
                                     </tbody>
@@ -567,27 +567,27 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_INVALID_TARGET</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_TIRED">ERR_INVALID_TARGET</a></td>
                                         <td>-7</td>
                                         <td>目标不是一个有效的Creep对象</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_FULL</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_FULL</a></td>
                                         <td>-8</td>
                                         <td>该Creep已经不能接收更多的资源了（已经满了）</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NOT_IN_RANGE</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_NOT_IN_RANGE</a></td>
                                         <td>-9</td>
                                         <td>目标太远啦</td>
                                     </tr>
@@ -596,7 +596,7 @@ export function loop(){
                         </div>
                         <div class="content-inside" id="creep-pull">
                             <p class="f16"><a class="head" href="#creep-pull">pull</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                            <p class="f12">帮助另一个Creep跟随这个Creep，target（目标）移动所产生的疲劳值将赋给这个Creep。需要该Creep具有<a class="cp move" href="../../constants/all/#constants-all-MOVE">MOVE</a>属性。目标必须位于该Creep的相邻区块内，Creep必须移动到其他地方，目标需要向着该Creep移动。</p>
+                            <p class="f12">帮助另一个Creep跟随这个Creep，target（目标）移动所产生的疲劳值将赋给这个Creep。需要该Creep具有<a class="cp move" href="#constants-all-MOVE">MOVE</a>属性。目标必须位于该Creep的相邻区块内，Creep必须移动到其他地方，目标需要向着该Creep移动。</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -609,7 +609,7 @@ export function loop(){
                                     <tbody>
                                     <tr>
                                         <td style="color: #f05654;">target</td>
-                                        <td><a class="cp carry" href="../Creep/">Creep</a></td>
+                                        <td><a class="cp carry" href="#objects-Creep">Creep</a></td>
                                         <td>目标Creep</td>
                                     </tr>
                                     </tbody>
@@ -619,22 +619,22 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_TIRED">ERR_INVALID_TARGET</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_TIRED">ERR_INVALID_TARGET</a></td>
                                         <td>-7</td>
                                         <td>目标不是一个有效的Creep对象</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NOT_IN_RANGE</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_NOT_IN_RANGE</a></td>
                                         <td>-9</td>
                                         <td>目标太远啦</td>
                                     </tr>
@@ -643,7 +643,7 @@ export function loop(){
                         </div>
                         <div class="content-inside" id="creep-rangedAttack">
                             <p class="f16"><a class="head" href="#creep-rangedAttack">rangedAttack</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                            <p class="f12">使用远程攻击邻近的另一个Creep或结构。需要该Creep具有<a class="cp ranged" href="../../constants/all/#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性。如果要攻击的目标位于墙壁内，则会攻击该墙壁。要攻击的目标必须位于Creep的3格区块内</p>
+                            <p class="f12">使用远程攻击邻近的另一个Creep或结构。需要该Creep具有<a class="cp ranged" href="#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性。如果要攻击的目标位于墙壁内，则会攻击该墙壁。要攻击的目标必须位于Creep的3格区块内</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -656,7 +656,7 @@ export function loop(){
                                     <tbody>
                                     <tr>
                                         <td style="color: #f05654;">target</td>
-                                        <td><a class="cp carry" href="../Creep/">Creep</a><br><a class="cp carry" href="../Structure/">Structure</a></td>
+                                        <td><a class="cp carry" href="#objects-Creep">Creep</a><br><a class="cp carry" href="#objects-Structure">Structure</a></td>
                                         <td>要攻击的目标对象</td>
                                     </tr>
                                     </tbody>
@@ -666,36 +666,36 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                         <td>-7</td>
                                         <td>目标不属于可被攻击的对象</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                         <td>-9</td>
                                         <td>目标太远啦</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                         <td>-12</td>
-                                        <td>这个Creep的属性列表里并没有<a class="cp ranged" href="../../constants/all/#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性</td>
+                                        <td>这个Creep的属性列表里并没有<a class="cp ranged" href="#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性</td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
                         <div class="content-inside" id="creep-rangedHeal">
                             <p class="f16"><a class="head" href="#creep-rangedHeal">rangedHeal</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
-                            <p class="f12">治疗自己或远处的其他己方的Creep，它将恢复Creep们受到伤害的部分，并恢复血量。需要该Creep具有<a class="cp heal" href="../../constants/all/#constants-all-HEAL">HEAL</a>属性，目标必须位于该Creep的3格区块内</p>
+                            <p class="f12">治疗自己或远处的其他己方的Creep，它将恢复Creep们受到伤害的部分，并恢复血量。需要该Creep具有<a class="cp heal" href="#constants-all-HEAL">HEAL</a>属性，目标必须位于该Creep的3格区块内</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -708,7 +708,7 @@ export function loop(){
                                     <tbody>
                                     <tr>
                                         <td style="color: #f05654;">target</td>
-                                        <td><a class="cp carry" href="../Creep/">Creep</a></td>
+                                        <td><a class="cp carry" href="#objects-Creep">Creep</a></td>
                                         <td>要治疗的目标Creep对象</td>
                                     </tr>
                                     </tbody>
@@ -718,53 +718,53 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                         <td>-7</td>
                                         <td>目标不是有效的Creep对象</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                         <td>-9</td>
                                         <td>目标太远啦</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                         <td>-12</td>
-                                        <td>你的Creep属性列表没有包含<a class="cp heal" href="../../constants/all/#constants-all-HEAL">HEAL</a>属性</td>
+                                        <td>你的Creep属性列表没有包含<a class="cp heal" href="#constants-all-HEAL">HEAL</a>属性</td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
                         <div class="content-inside" id="creep-rangedMassAttack">
                             <p class="f16"><a class="head" href="#creep-rangedHeal">rangedMassAttack</a><span style="color: white;">()</span></p>
-                            <p class="f12">对3格区块以内的所有敌方Creep或建筑进行远程攻击。需要该Creep具有<a class="cp ranged" href="../../constants/all/#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性，攻击力取决于该Creep对每个目标的射程，己方单位不受此影响。</p>
+                            <p class="f12">对3格区块以内的所有敌方Creep或建筑进行远程攻击。需要该Creep具有<a class="cp ranged" href="#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性，攻击力取决于该Creep对每个目标的射程，己方单位不受此影响。</p>
                             <p class="f12">返回以下代码之一：</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NO_BODYPART">ERR_NO_BODYPART</a></td>
                                         <td>-12</td>
-                                        <td>你的Creep属性列表没有包含<a class="cp ranged" href="../../constants/all/#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性</td>
+                                        <td>你的Creep属性列表没有包含<a class="cp ranged" href="#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>属性</td>
                                     </tr>
                                 </table>
                             </div>
@@ -784,7 +784,7 @@ export function loop(){
                                     <tbody>
                                     <tr>
                                         <td style="color: #f05654;">target</td>
-                                        <td><a class="cp carry" href="../Creep/">Creep</a><br><a class="cp carry" href="../Structure/">Structure</a></td>
+                                        <td><a class="cp carry" href="#objects-Creep">Creep</a><br><a class="cp carry" href="#objects-Structure">Structure</a></td>
                                         <td>要转移的目标对象</td>
                                     </tr>
                                     <tr>
@@ -804,37 +804,37 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_NOT_ENOUGH_RESOURCES</a></td>
                                         <td>-6</td>
                                         <td>该Creep目前没有指定数量的资源可供转移</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                         <td>-7</td>
                                         <td>要转移的目标对象不属于可以包含指定资源的有效对象</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_FULL</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_FULL</a></td>
                                         <td>-8</td>
                                         <td>目标已经不能接收更多的资源了（已经满了）</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                         <td>-9</td>
                                         <td>目标太远啦</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_ARGS</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_ARGS</a></td>
                                         <td>-10</td>
                                         <td>resourceType参数填写不属于RESOURCE_*常量之一，或者填写的数量不正确。</td>
                                     </tr>
@@ -856,7 +856,7 @@ export function loop(){
                                     <tbody>
                                     <tr>
                                         <td style="color: #f05654;">target</td>
-                                        <td><a class="cp carry" href="../Structure/">Structure</a></td>
+                                        <td><a class="cp carry" href="#objects-Structure">Structure</a></td>
                                         <td>要抓取的目标结构</td>
                                     </tr>
                                     <tr>
@@ -876,37 +876,37 @@ export function loop(){
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="../../constants/all/#constants-all-OK">OK</a></td>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
                                         <td style="width: 20px;">0</td>
                                         <td style="width: 460px;">操作已成功执行</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
                                         <td>-1</td>
                                         <td>该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_NOT_ENOUGH_RESOURCES</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_NOT_ENOUGH_RESOURCES</a></td>
                                         <td>-6</td>
                                         <td>目标结构目前没有指定数量的资源可供转移</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
                                         <td>-7</td>
                                         <td>要抓取的目标对象不属于可以包含指定资源的有效对象</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_FULL</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_FULL</a></td>
                                         <td>-8</td>
                                         <td>该Creep已经不能接收更多的资源了（已经满了）</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a></td>
                                         <td>-9</td>
                                         <td>目标太远啦</td>
                                     </tr>
                                     <tr>
-                                        <td><a class="cl cp" href="../../constants/all/#constants-all-ERR_INVALID_TARGET">ERR_INVALID_ARGS</a></td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_ARGS</a></td>
                                         <td>-10</td>
                                         <td>resourceType参数填写不属于RESOURCE_*常量之一，或者填写的数量不正确。</td>
                                     </tr>
@@ -1000,9 +1000,9 @@ if (targets.length) {
                         </div>
                     </div>
                 </div>
-                <div class="content-chapter">
+                <div class="content-chapter" id="objects-GameObject">
                     <div class="content-desc">
-                        <p><span style="color: #6394f8;" class="f24" id="objects-GameObject">GameObject</span><span style="color: gray;" class="f16">class
+                        <p><span style="color: #6394f8;" class="f24">GameObject</span><span style="color: gray;" class="f16">class
                             </span></p>
                         <p class="f12">游戏对象的基类，所有的对象和类都继承自这个类</p>
                         <div class="content-inside" id="gameObject-exists">
@@ -1011,7 +1011,7 @@ if (targets.length) {
                         </div>
                         <div class="content-inside" id="gameObject-id">
                             <p class="f16"><a class="head" href="#gameObject-id">id</a><span style="color: gray;" class="f12">string</span></p>
-                            <p class="f12">可以通过<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/getObjectById/">getObjectById</a>函数找到该对象的唯一ID</p>
+                            <p class="f12">可以通过<a class="cl" href="#">game/utils</a> <a class="cost" href="#functions-getObjectById">getObjectById</a>函数找到该对象的唯一ID</p>
                         </div>
                         <div class="content-inside" id="gameObject-ticksToDecay">
                             <p class="f16"><a class="head" href="#gameObject-ticksToDecay">ticksToDecay</a><span style="color: gray;" class="f12">number</span></p>
@@ -1027,7 +1027,7 @@ if (targets.length) {
                         </div>
                         <div class="content-inside" id="gameObject-findClosestByPath">
                             <p class="f16"><a class="head" href="#gameObject-findClosestByPath">findClosestByPath</a><span style="color: white;">(</span><span class="tch">position</span><span style="color: white;">, </span><span class="tch">[opts]</span><span style="color: white;">)</span></p>
-                            <p class="f12">找到给定参数中路径与该GameObject最短的那一个对象的位置。（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findClosestByPath/">findClosestByPath</a>）</p>
+                            <p class="f12">找到给定参数中路径与该GameObject最短的那一个对象的位置。（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="#functions-findClosestByPath">findClosestByPath</a>）</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -1046,7 +1046,7 @@ if (targets.length) {
                                     <tr>
                                         <td style="color: #f05654;">opts (optional)</td>
                                         <td><span style="color: gray">object</span></td>
-                                        <td>包含了<a class="cost" href="../../functions/searchPath/">searchPath</a>函数支持的其他寻路标志的对象。</td>
+                                        <td>包含了<a class="cost" href="#functions-searchPath">searchPath</a>函数支持的其他寻路标志的对象。</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -1055,7 +1055,7 @@ if (targets.length) {
                         </div>
                         <div class="content-inside" id="gameObject-findClosestByRange">
                             <p class="f16"><a class="head" href="#gameObject-findClosestByRange">findClosestByRange</a><span style="color: white;">(</span><span class="tch">position</span><span style="color: white;">)</span></p>
-                            <p class="f12">找到给定参数中直线距离与该GameObject最短的那一个对象的位置。（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findClosestByRange/">findClosestByRange</a>）</p>
+                            <p class="f12">找到给定参数中直线距离与该GameObject最短的那一个对象的位置。（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="#functions-findClosestByRange">findClosestByRange</a>）</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -1078,7 +1078,7 @@ if (targets.length) {
                         </div>
                         <div class="content-inside" id="gameObject-findInRange">
                             <p class="f16"><a class="head" href="#gameObject-findInRange">findInRange</a><span style="color: white;">(</span><span class="tch">position</span><span style="color: white;">, </span><span class="tch">range</span><span style="color: white;">)</span></p>
-                            <p class="f12">查找指定线性范围内的所有对象。（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findInRange/">findInRange</a>）</p>
+                            <p class="f12">查找指定线性范围内的所有对象。（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="#functions-findInRange">findInRange</a>）</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -1106,7 +1106,7 @@ if (targets.length) {
                         </div>
                         <div class="content-inside" id="gameObject-findPathTo">
                             <p class="f16"><a class="head" href="#gameObject-findPathTo">findPathTo</a><span style="color: white;">(</span><span class="tch">pos</span><span style="color: white;">, </span><span class="tch">[opts]</span><span style="color: white;">)</span></p>
-                            <p class="f12">找到从该GameObject到指定参数对象的路径（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findClosestByPath/">findClosestByPath</a>）</p>
+                            <p class="f12">找到从该GameObject到指定参数对象的路径（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="#functions-findClosestByPath">findClosestByPath</a>）</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -1125,7 +1125,7 @@ if (targets.length) {
                                     <tr>
                                         <td style="color: #f05654;">opts (optional)</td>
                                         <td><span style="color: gray">object</span></td>
-                                        <td>一个附带着附加属性的对象，这些选项将按照参数传值给<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/findPath/">findPath</a></td>
+                                        <td>一个附带着附加属性的对象，这些选项将按照参数传值给<a class="cl" href="#">game/utils</a> <a class="cost" href="#functions-findPath">findPath</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -1134,7 +1134,7 @@ if (targets.length) {
                         </div>
                         <div class="content-inside" id="gameObject-getRangeTo">
                             <p class="f16"><a class="head" href="#gameObject-getRangeTo">getRangeTo</a><span style="color: white;">(</span><span class="tch">pos</span><span style="color: white;">)</span></p>
-                            <p class="f12">请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="../../functions/getRange/">getRange</a></p>
+                            <p class="f12">请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="#functions-getRange">getRange</a></p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -1159,6 +1159,264 @@ if (targets.length) {
                         <div style="padding-top: 1058px">
                         <pre><code class="javascript">let path = creep.findPathTo(spawn);
 console.log(path.length);</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="constants-ALL">
+                    <div class="content-desc">
+                        <div class="content-inside" id="constants-all-OK">
+                            <p class="f16"><a class="head" href="#constants-all-OK">OK</a><span style="color: gray;" class="f12">0</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_NOT_OWNER">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a><span style="color: gray;" class="f12">-1</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_NO_PATH">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_NO_PATH">ERR_NO_PATH</a><span style="color: gray;" class="f12">-2</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_NAME_EXISTS">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_NAME_EXISTS">ERR_NAME_EXISTS</a><span style="color: gray;" class="f12">-3</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_BUSY">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_BUSY">ERR_BUSY</a><span style="color: gray;" class="f12">-4</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_NOT_FOUND">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_NOT_FOUND">ERR_NOT_FOUND</a><span style="color: gray;" class="f12">-5</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_NOT_ENOUGH_ENERGY">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_NOT_ENOUGH_ENERGY">ERR_NOT_ENOUGH_ENERGY</a><span style="color: gray;" class="f12">-6</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_NOT_ENOUGH_RESOURCES">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a><span style="color: gray;" class="f12">-6</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_INVALID_TARGET">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_INVALID_TARGET">ERR_NOT_ENOUGH_RESOURCES</a><span style="color: gray;" class="f12">-7</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_FULL">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_FULL">ERR_FULL</a><span style="color: gray;" class="f12">-8</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_NOT_IN_RANGE">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_NOT_IN_RANGE">ERR_NOT_IN_RANGE</a><span style="color: gray;" class="f12">-9</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_INVALID_ARGS">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a><span style="color: gray;" class="f12">-10</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_TIRED">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_TIRED">ERR_TIRED</a><span style="color: gray;" class="f12">-11</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_NO_BODYPART">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_NO_BODYPART">ERR_FULL</a><span style="color: gray;" class="f12">-12</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ERR_NOT_ENOUGH_EXTENSIONS">
+                            <p class="f16"><a class="head" href="#constants-all-ERR_NOT_ENOUGH_EXTENSIONS">ERR_NOT_ENOUGH_EXTENSIONS</a><span style="color: gray;" class="f12">-6</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-MOVE">
+                            <p class="f16"><a class="head" href="#constants-all-MOVE">MOVE</a><span style="color: gray;" class="f12">move</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-RANGED_ATTACK">
+                            <p class="f16"><a class="head" href="#constants-all-RANGED_ATTACK">RANGED_ATTACK</a><span style="color: gray;" class="f12">ranged_attack</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-HEAL">
+                            <p class="f16"><a class="head" href="#constants-all-HEAL">HEAL</a><span style="color: gray;" class="f12">heal</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ATTACK">
+                            <p class="f16"><a class="head" href="#constants-all-ATTACK">ATTACK</a><span style="color: gray;" class="f12">attack</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-CARRY">
+                            <p class="f16"><a class="head" href="#constants-all-CARRY">CARRY</a><span style="color: gray;" class="f12">carry</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOUGH">
+                            <p class="f16"><a class="head" href="#constants-all-TOUGH">TOUGH</a><span style="color: gray;" class="f12">tough</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-WORK">
+                            <p class="f16"><a class="head" href="#constants-all-WORK">WORK</a><span style="color: gray;" class="f12">work</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOP">
+                            <p class="f16"><a class="head" href="#constants-all-TOP">TOP</a><span style="color: gray;" class="f12">1</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOP_RIGHT">
+                            <p class="f16"><a class="head" href="#constants-all-TOP_RIGHT">TOP_RIGHT</a><span style="color: gray;" class="f12">2</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-RIGHT">
+                            <p class="f16"><a class="head" href="#constants-all-RIGHT">RIGHT</a><span style="color: gray;" class="f12">3</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-BOTTOM_RIGHT">
+                            <p class="f16"><a class="head" href="#constants-all-BOTTOM_RIGHT">BOTTOM_RIGHT</a><span style="color: gray;" class="f12">4</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-BOTTOM">
+                            <p class="f16"><a class="head" href="#constants-all-BOTTOM">BOTTOM</a><span style="color: gray;" class="f12">5</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-BOTTOM_LEFT">
+                            <p class="f16"><a class="head" href="#constants-all-BOTTOM_LEFT">BOTTOM_LEFT</a><span style="color: gray;" class="f12">6</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-LEFT">
+                            <p class="f16"><a class="head" href="#constants-all-LEFT">LEFT</a><span style="color: gray;" class="f12">7</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOP_LEFT">
+                            <p class="f16"><a class="head" href="#constants-all-TOP_LEFT">TOP_LEFT</a><span style="color: gray;" class="f12">8</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TERRAIN_PLAIN">
+                            <p class="f16"><a class="head" href="#constants-all-TERRAIN_PLAIN">TERRAIN_PLAIN</a><span style="color: gray;" class="f12">0</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TERRAIN_WALL">
+                            <p class="f16"><a class="head" href="#constants-all-TERRAIN_WALL">TERRAIN_WALL</a><span style="color: gray;" class="f12">1</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TERRAIN_SWAMP">
+                            <p class="f16"><a class="head" href="#constants-all-TERRAIN_SWAMP">TERRAIN_SWAMP</a><span style="color: gray;" class="f12">2</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-BODYPART_HITS">
+                            <p class="f16"><a class="head" href="#constants-all-BODYPART_HITS">BODYPART_HITS</a><span style="color: gray;" class="f12">100</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-RANGED_ATTACK_POWER">
+                            <p class="f16"><a class="head" href="#constants-all-RANGED_ATTACK_POWER">RANGED_ATTACK_POWER</a><span style="color: gray;" class="f12">10</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-RANGED_ATTACK_DISTANCE_RATE">
+                            <p class="f16"><a class="head" href="#constants-all-RANGED_ATTACK_DISTANCE_RATE">RANGED_ATTACK_DISTANCE_RATE</a><span style="color: gray;" class="f12">{0: 1, 1: 1, 2: 0.4, 3: 0.1}</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ATTACK_POWER">
+                            <p class="f16"><a class="head" href="#constants-all-ATTACK_POWER">ATTACK_POWER</a><span style="color: gray;" class="f12">30</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-HEAL_POWER">
+                            <p class="f16"><a class="head" href="#constants-all-HEAL_POWER">HEAL_POWER</a><span style="color: gray;" class="f12">12</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-RANGED_HEAL_POWER">
+                            <p class="f16"><a class="head" href="#constants-all-RANGED_HEAL_POWER">RANGED_HEAL_POWER</a><span style="color: gray;" class="f12">4</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-CARRY_CAPACITY">
+                            <p class="f16"><a class="head" href="#constants-all-CARRY_CAPACITY">CARRY_CAPACITY</a><span style="color: gray;" class="f12">50</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-REPAIR_POWER">
+                            <p class="f16"><a class="head" href="#constants-all-REPAIR_POWER">REPAIR_POWER</a><span style="color: gray;" class="f12">100</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-DISMANTLE_POWER">
+                            <p class="f16"><a class="head" href="#constants-all-DISMANTLE_POWER">DISMANTLE_POWER</a><span style="color: gray;" class="f12">50</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-REPAIR_COST">
+                            <p class="f16"><a class="head" href="#constants-all-REPAIR_COST">REPAIR_COST</a><span style="color: gray;" class="f12">0.01</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-DISMANTLE_COST">
+                            <p class="f16"><a class="head" href="#constants-all-DISMANTLE_COST">DISMANTLE_COST</a><span style="color: gray;" class="f12">0.005</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-HARVEST_POWER">
+                            <p class="f16"><a class="head" href="#constants-all-HARVEST_POWER">HARVEST_POWER</a><span style="color: gray;" class="f12">2</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-BUILD_POWER">
+                            <p class="f16"><a class="head" href="#constants-all-BUILD_POWER">BUILD_POWER</a><span style="color: gray;" class="f12">5</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-OBSTACLE_OBJECT_TYPES">
+                            <p class="f16"><a class="head" href="#constants-all-OBSTACLE_OBJECT_TYPES">OBSTACLE_OBJECT_TYPES</a><br><span style="color: white; font-size: 12px">['creep','tower','constructedWall','spawn','extension','link']</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOWER_ENERGY_COST">
+                            <p class="f16"><a class="head" href="#constants-all-TOWER_ENERGY_COST">TOWER_ENERGY_COST</a><span style="color: gray;" class="f12">10</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOWER_RANGE">
+                            <p class="f16"><a class="head" href="#constants-all-TOWER_RANGE">TOWER_RANGE</a><span style="color: gray;" class="f12">50</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOWER_HITS">
+                            <p class="f16"><a class="head" href="#constants-all-TOWER_HITS">TOWER_HITS</a><span style="color: gray;" class="f12">3000</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOWER_CAPACITY">
+                            <p class="f16"><a class="head" href="#constants-all-TOWER_CAPACITY">TOWER_CAPACITY</a><span style="color: gray;" class="f12">50</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOWER_POWER_ATTACK">
+                            <p class="f16"><a class="head" href="#constants-all-TOWER_POWER_ATTACK">TOWER_POWER_ATTACK</a><span style="color: gray;" class="f12">150</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOWER_POWER_HEAL">
+                            <p class="f16"><a class="head" href="#constants-all-TOWER_POWER_HEAL">TOWER_POWER_HEAL</a><span style="color: gray;" class="f12">100</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOWER_POWER_REPAIR">
+                            <p class="f16"><a class="head" href="#constants-all-TOWER_POWER_REPAIR">TOWER_POWER_REPAIR</a><span style="color: gray;" class="f12">200</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOWER_OPTIMAL_RANGE">
+                            <p class="f16"><a class="head" href="#constants-all-TOWER_OPTIMAL_RANGE">TOWER_OPTIMAL_RANGE</a><span style="color: gray;" class="f12">5</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOWER_FALLOFF_RANGE">
+                            <p class="f16"><a class="head" href="#constants-all-TOWER_FALLOFF_RANGE">TOWER_FALLOFF_RANGE</a><span style="color: gray;" class="f12">20</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOWER_FALLOFF">
+                            <p class="f16"><a class="head" href="#constants-all-TOWER_FALLOFF">TOWER_FALLOFF</a><span style="color: gray;" class="f12">0.75</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-TOWER_COOLDOWN">
+                            <p class="f16"><a class="head" href="#constants-all-TOWER_COOLDOWN">TOWER_COOLDOWN</a><span style="color: gray;" class="f12">10</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-BODYPART_COST">
+                            <p class="f24"><a class="head" href="#constants-all-BODYPART_COST">BODYPART_COST</a></p>
+                            <ul style="list-style: none">
+                                <li><span style="color: #6394f8">[</span><a class="all-work all-cp" href="#constants-all-WORK">WORK</a><span style="color: #6394f8">]</span><span style="color: gray;" class="f12">100</span></li>
+                                <li><span style="color: #6394f8">[</span><a class="all-move all-cp" href="#constants-all-MOVE">MOVE</a><span style="color: #6394f8">]</span><span style="color: gray;" class="f12">50</span></li>
+                                <li><span style="color: #6394f8">[</span><a class="all-carry all-cp" href="#constants-all-CARRY">CARRY</a><span style="color: #6394f8">]</span><span style="color: gray;" class="f12">50</span></li>
+                                <li><span style="color: #6394f8">[</span><a class="all-attack all-cp" href="#constants-all-ATTACK">ATTACK</a><span style="color: #6394f8">]</span><span style="color: gray;" class="f12">80</span></li>
+                                <li><span style="color: #6394f8">[</span><a class="all-ranged all-cp" href="#constants-all-RANGED_ATTACK">RANGED_ATTACK</a><span style="color: #6394f8">]</span><span style="color: gray;" class="f12">150</span></li>
+                                <li><span style="color: #6394f8">[</span><a class="all-heal all-cp" href="#constants-all-HEAL">HEAL</a><span style="color: #6394f8">]</span><span style="color: gray;" class="f12">250</span></li>
+                                <li><span style="color: #6394f8">[</span><a class="all-tough all-cp" href="#constants-all-TOUGH">TOUGH</a><span style="color: #6394f8">]</span><span style="color: gray;" class="f12">10</span></li>
+                            </ul>
+                        </div>
+                        <div class="content-inside" id="constants-all-MAX_CREEP_SIZE">
+                            <p class="f16"><a class="head" href="#constants-all-MAX_CREEP_SIZE">MAX_CREEP_SIZE</a><span style="color: gray;" class="f12">50</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-CREEP_SPAWN_TIME">
+                            <p class="f16"><a class="head" href="#constants-all-CREEP_SPAWN_TIME">CREEP_SPAWN_TIME</a><span style="color: gray;" class="f12">3</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-RESOURCE_ENERGY">
+                            <p class="f16"><a class="head" href="#constants-all-RESOURCE_ENERGY">RESOURCE_ENERGY</a><span style="color: gray;" class="f12">energy</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-RESOURCES_ALL">
+                            <p class="f16"><a class="head" href="#constants-all-RESOURCES_ALL">RESOURCES_ALL</a><span style="color: gray;" class="f12">[RESOURCE_ENERGY]</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-SOURCE_ENERGY_REGEN">
+                            <p class="f16"><a class="head" href="#constants-all-SOURCE_ENERGY_REGEN">SOURCE_ENERGY_REGEN</a><span style="color: gray;" class="f12">10</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-RESOURCE_DECAY">
+                            <p class="f16"><a class="head" href="#constants-all-RESOURCE_DECAY">RESOURCE_DECAY</a><span style="color: gray;" class="f12">1000</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-MAX_CONSTRUCTION_SITES">
+                            <p class="f16"><a class="head" href="#constants-all-MAX_CONSTRUCTION_SITES">MAX_CONSTRUCTION_SITES</a><span style="color: gray;" class="f12">10</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-CONSTRUCTION_COST_ROAD_SWAMP_RATIO">
+                            <p class="f16"><a class="head" href="#constants-all-CONSTRUCTION_COST_ROAD_SWAMP_RATIO">CONSTRUCTION_COST_ROAD_SWAMP_RATIO</a><span style="color: gray;" class="f12">5</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-CONSTRUCTION_COST_ROAD_WALL_RATIO">
+                            <p class="f16"><a class="head" href="#constants-all-CONSTRUCTION_COST_ROAD_WALL_RATIO">CONSTRUCTION_COST_ROAD_WALL_RATIO</a><span style="color: gray;" class="f12">150</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-CONTAINER_HITS">
+                            <p class="f16"><a class="head" href="#constants-all-CONTAINER_HITS">CONTAINER_HITS</a><span style="color: gray;" class="f12">300</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-CONTAINER_CAPACITY">
+                            <p class="f16"><a class="head" href="#constants-all-CONTAINER_CAPACITY">CONTAINER_CAPACITY</a><span style="color: gray;" class="f12">2000</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-WALL_HITS">
+                            <p class="f16"><a class="head" href="#constants-all-WALL_HITS">WALL_HITS</a><span style="color: gray;" class="f12">10000</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-WALL_HITS_MAX">
+                            <p class="f16"><a class="head" href="#constants-all-WALL_HITS_MAX">WALL_HITS_MAX</a><span style="color: gray;" class="f12">10000</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-RAMPART_HITS">
+                            <p class="f16"><a class="head" href="#constants-all-RAMPART_HITS">RAMPART_HITS</a><span style="color: gray;" class="f12">10000</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-RAMPART_HITS_MAX">
+                            <p class="f16"><a class="head" href="#constants-all-RAMPART_HITS_MAX">RAMPART_HITS_MAX</a><span style="color: gray;" class="f12">10000</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ROAD_HITS">
+                            <p class="f16"><a class="head" href="#constants-all-ROAD_HITS">ROAD_HITS</a><span style="color: gray;" class="f12">500</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-ROAD_WEAROUT">
+                            <p class="f16"><a class="head" href="#constants-all-ROAD_WEAROUT">ROAD_WEAROUT</a><span style="color: gray;" class="f12">1</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-EXTENSION_HITS">
+                            <p class="f16"><a class="head" href="#constants-all-EXTENSION_HITS">EXTENSION_HITS</a><span style="color: gray;" class="f12">100</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-EXTENSION_ENERGY_CAPACITY">
+                            <p class="f16"><a class="head" href="#constants-all-EXTENSION_ENERGY_CAPACITY">EXTENSION_ENERGY_CAPACITY</a><span style="color: gray;" class="f12">100</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-SPAWN_ENERGY_CAPACITY">
+                            <p class="f16"><a class="head" href="#constants-all-SPAWN_ENERGY_CAPACITY">SPAWN_ENERGY_CAPACITY</a><span style="color: gray;" class="f12">1000</span></p>
+                        </div>
+                        <div class="content-inside" id="constants-all-SPAWN_HITS">
+                            <p class="f16"><a class="head" href="#constants-all-SPAWN_HITS">SPAWN_HITS</a><span style="color: gray;" class="f12">3000</span></p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
                         </div>
                     </div>
                 </div>
