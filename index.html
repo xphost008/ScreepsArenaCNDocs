@@ -56,7 +56,7 @@ export function loop(){
                 </div>
                 <div class="content-chapter" id="objects-ConstructionSite">
                     <div class="content-desc">
-                        <p><span style="color: #6394f8;" class="f24">ConstructionSite</span><span style="color: gray;" class="f16">class extends GameObject
+                        <p><span style="color: #6394f8;" class="f24">ConstructionSite</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a>
                     </span></p>
                         <p class="f12">一个正在建筑中的结构空位，要在该空位上建造一个结构，你需要给附有 WORK 属性的creep一些能量，并且执行build功能。</p>
                         <div class="content-inside" id="constructionSite-my">
@@ -88,7 +88,7 @@ export function loop(){
                 </div>
                 <div class="content-chapter" id="objects-Creep">
                     <div class="content-desc">
-                        <p><span style="color: #6394f8;" class="f24">Creep</span><span style="color: gray;" class="f16">class extends GameObject</span></p>
+                        <p><span style="color: #6394f8;" class="f24">Creep</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a></span></p>
                         <p class="f12">Creep们是你的工作单位，Creep们可以移动、抓取能量、建造结构、攻击其他人的Creep以及执行很多别的功能。每个Creep最多可以拥有50个bodyPart（属性【下同】）构成，可以有以下几种类型：</p>
                         <div class="f12">
                             <table style="border-collapse: collapse;" cellpadding="8">
@@ -1106,7 +1106,7 @@ if (targets.length) {
                         </div>
                         <div class="content-inside" id="gameObject-findPathTo">
                             <p class="f16"><a class="head" href="#gameObject-findPathTo">findPathTo</a><span style="color: white;">(</span><span class="tch">pos</span><span style="color: white;">, </span><span class="tch">[opts]</span><span style="color: white;">)</span></p>
-                            <p class="f12">找到从该GameObject到指定参数对象的路径（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="#functions-findClosestByPath">findClosestByPath</a>）</p>
+                            <p class="f12">找到从该GameObject到指定参数对象的路径（请参阅<a class="cl" href="#">game/utils</a> <a class="cost" href="#functions-findPathTo">findPathTo</a>）</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -1159,6 +1159,47 @@ if (targets.length) {
                         <div style="padding-top: 1058px">
                         <pre><code class="javascript">let path = creep.findPathTo(spawn);
 console.log(path.length);</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="objects-OwnedStructure">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">OwnedStructure</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-Structure">Structure</a>
+                    </span></p>
+                        <p class="f12">一个具有所属玩家的结构的基类。</p>
+                        <div class="content-inside" id="OwnedStructure-my">
+                            <p class="f16"><a class="head" href="#OwnedStructure-my">my</a><span style="color: gray;" class="f12">boolean</span></p>
+                            <p class="f12">对于属于你的结构将返回true，对于敌方的结构返回false，对于双方都可以使用的结构返回undefined</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">import { getObjectsByPrototype } from 'game/utils';
+import { Creep, StructureSpawn } from 'game/prototypes';
+
+export function loop() {
+    let target = getObjectsByPrototype(StructureSpawn).find(i => !i.my);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="objects-Resource">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">Resource</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a>
+                    </span></p>
+                        <p class="f12">一个被丢弃的资源，如果迟迟不捡起来，过一段时间则会消失。丢弃的资源每刻减少的资源数计算公式为：向上取整(数量/1000)</p>
+                        <div class="content-inside" id="Resource-amount">
+                            <p class="f16"><a class="head" href="#Resource-amount">amount</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">丢弃资源目前的剩余数量</p>
+                        </div>
+                        <div class="content-inside" id="Resource-resourceType">
+                            <p class="f16"><a class="head" href="#Resource-resourceType">resourceType</a><span style="color: gray;" class="f12">string</span></p>
+                            <p class="f12">RESOURCE_*的常量之一</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
                         </div>
                     </div>
                 </div>

@@ -215,12 +215,14 @@ a.cost:active {
 }
 .content-chapter {
     display: flex;
-    padding: 5px 5px 5px 5px;
+    padding: 5px;
     background-color: #2c303f;
 }
 .content-desc {
     flex: 0 0 730px;
+    display: block;
     background-color: #161c26;
+    padding-left: 10px;
     border-radius: 5px;
 }
 .content-code {
