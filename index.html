@@ -86,6 +86,98 @@ export function loop(){
                         </div>
                     </div>
                 </div>
+                <div class="content-chapter" id="objects-CostMatrix">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">CostMatrix</span><span style="color: gray;" class="f16">class
+                    </span></p>
+                        <p class="f12">用于自定义导航代价数据的一个类，如果在该类中发现非0值，则将使用该值代替掉默认地形造成的代价。</p>
+                        <div class="content-inside" id="CostMatrix-constructor" style="height: +102px;">
+                            <p class="f16"><a class="head" href="#CostMatrix-constructor">constructor</a><span style="color: gray;" class="f12">()</span></p>
+                            <p class="f12">为所有位置创建一个初始值为0的新<a class="cost" href="#objects-CostMatrix">CostMatrix</a>。</p>
+                        </div>
+                        <div class="content-inside" id="CostMatrix-set">
+                            <p class="f16"><a class="head" href="#CostMatrix-set">set</a><span style="color: white;">(</span><span class="tch">x</span><span style="color: white;">, </span><span class="tch">y</span><span style="color: white;">, </span><span class="tch">cost</span><span style="color: white;">)</span></p>
+                            <p class="f12">在该<a class="cost" href="#objects-CostMatrix">CostMatrix</a>中设置来自x, y位置的代价值。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">x</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>游戏场上的x轴</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">y</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>游戏场上的y轴</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">cost</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>该位置的代价值，必须是一个整数。0的代价将使用该位置的默认代价。大于或等于255的代价将被视作无法使用。</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="CostMatrix-get">
+                            <p class="f16"><a class="head" href="#CostMatrix-get">get</a><span style="color: white;">(</span><span class="tch">x</span><span style="color: white;">, </span><span class="tch">y</span><span style="color: white;">)</span></p>
+                            <p class="f12">在该<a class="cost" href="#objects-CostMatrix">CostMatrix</a>中获取来自x, y位置的代价值。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">x</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>游戏场上的x轴</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">y</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>游戏场上的y轴</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="CostMatrix-clone">
+                            <p class="f16"><a class="head" href="#CostMatrix-clone">clone</a><span style="color: white;">()</span></p>
+                            <p class="f12">将该<a class="cost" href="#objects-CostMatrix">CostMatrix</a>复制到具有着相同数据的一个新的<a class="cost" href="#objects-CostMatrix">CostMatrix</a>中，并返回一个新的<a class="cost" href="#objects-CostMatrix">CostMatrix</a>。</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 82px">
+                            <pre><code class="javascript">import { CostMatrix } from 'game/path-finder';
+
+export function loop() {
+    let costs = new CostMatrix;
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 0px">
+                            <pre><code class="javascript">import { CostMatrix } from 'game/path-finder';
+
+export function loop() {
+    let costs = new CostMatrix;
+    costs.set(constructionSite.x, constructionSite.y, 10); // avoid walking over a construction site
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
                 <div class="content-chapter" id="objects-Creep">
                     <div class="content-desc">
                         <p><span style="color: #6394f8;" class="f24">Creep</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a></span></p>
@@ -1203,6 +1295,58 @@ export function loop() {
                         </div>
                     </div>
                 </div>
+                <div class="content-chapter" id="objects-Source">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">Source</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a>
+                    </span></p>
+                        <p class="f12">一种能量源，可以使用具有<a class="cp work" href="#constants-all-WORK">WORK</a>属性的Creep进行采集。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td style="width: 300px;">能量数量</td>
+                                    <td style="width: 300px;">1000</td>
+                                </tr>
+                                <tr>
+                                    <td>能量恢复</td>
+                                    <td>每刻10能量</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="content-inside" id="Resource-amount">
+                            <p class="f16"><a class="head" href="#Source-energy">energy</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">当前能量源中的能量</p>
+                        </div>
+                        <div class="content-inside" id="Resource-energyCapacity">
+                            <p class="f16"><a class="head" href="#Source-energyCapacity">energyCapacity</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">该能量源的最大存储能量</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="content-chapter" id="objects-Resource">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">Resource</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a>
+                    </span></p>
+                        <p class="f12">一个被丢弃的资源，如果迟迟不捡起来，过一段时间则会消失。丢弃的资源每刻减少的资源数计算公式为：向上取整(数量/1000)</p>
+                        <div class="content-inside" id="Resource-amount">
+                            <p class="f16"><a class="head" href="#Resource-amount">amount</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">丢弃资源目前的剩余数量</p>
+                        </div>
+                        <div class="content-inside" id="Resource-resourceType">
+                            <p class="f16"><a class="head" href="#Resource-resourceType">resourceType</a><span style="color: gray;" class="f12">string</span></p>
+                            <p class="f12">RESOURCE_*的常量之一</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div> -->
                 <div class="content-chapter" id="constants-ALL">
                     <div class="content-desc">
                         <div class="content-inside" id="constants-all-OK">
