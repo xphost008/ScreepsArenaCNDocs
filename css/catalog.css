@@ -3,11 +3,30 @@
     color: gray;
     cursor: pointer;
 }
+.hlt {
+    background-color: #ffff00;
+    color: black;
+}
 .all {
     background-color: #2c303f;
     color: #FFFFFF;
     margin: 0;
     padding: 0;
+}
+.content-left > p {
+    padding-left: 16px;
+}
+.content-left > h2 {
+    padding-left: 16px;
+}
+details {
+    padding-left: 16px;
+}
+#search-box {
+    background-color: #2c303f;
+    color: #fff;
+    height: 24px;
+    width: 200px;
 }
 .head:hover {
     text-decoration: none;
@@ -202,13 +221,16 @@ a.cost:active {
     float: left;
     height: 100%;
     width: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 .content-right {
     display: block;
     float: right;
     position: fixed;
     overflow-y: auto;
-    left: 250px;
+    left: 258px;
     right: 0;
     height: 100%;
     background-color: #2c303f;
@@ -219,7 +241,7 @@ a.cost:active {
     background-color: #2c303f;
 }
 .content-desc {
-    flex: 0 0 730px;
+    flex: 0 0 700px;
     display: block;
     background-color: #161c26;
     padding-left: 10px;
@@ -231,7 +253,7 @@ a.cost:active {
     border-radius: 5px;
 }
 .content-inside {
-    width: 710px;
+    width: 680px;
     background-color: #1e212c;
     padding-left: 10px;
     border-radius: 5px;

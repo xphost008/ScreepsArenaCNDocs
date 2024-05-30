@@ -7,14 +7,94 @@
         <link rel="stylesheet" type="text/css" href="js/styles/atom-one-dark-reasonable.min.css">
         <link rel="stylesheet" type="text/css" href="css/catalog.css">
         <script src="js/highlight.min.js"></script>
+        <script src="js/jquery.js"></script>
     </head>
-    <body class="all" style="overflow-y: hidden">
+    <body id="wid-body" class="all" style="overflow-y: hidden">
         <script>
             hljs.highlightAll();
         </script>
+        <script>
+            function search() {
+                let search_text = document.getElementById("search-box").value
+                let bodp = document.getElementsByClassName("content-right")[0].innerHTML
+                let re = new RegExp(search_text, "gi")
+                // document.getElementsByClassName("content-right")[0].innerHTML = bodp.replace("<span class=\"hlt\">", "")
+                document.getElementsByClassName("content-right")[0].innerHTML = bodp.replace(re, `<span class="hlt">${search_text}</span>`)
+            }
+        </script>
         <div class="content-all">
-            <div class="content-left">
-                <iframe class="clct" src="./catalog.html" frameborder="0"></iframe>
+            <div class="content-left" style="padding-left: 8px">
+                <h2>Screeps API</h2>
+                <label style="padding-left: 10px">
+                    <input type="search" id="search-box" placeholder="搜索" onchange="search()"/>
+                </label>
+                <div style="padding-top: 10px">
+                    <details open>
+                        <summary class="tle">OBJECTS</summary>
+                        <p><a class="cl" href="#objects-arenaInfo" target="_parent">arenaInfo</a></p>
+                        <p><a class="cl" href="#objects-ConstructionSite" target="_parent">ConstructionSite</a></p>
+                        <p><a class="cl" href="#objects-Creep" target="_parent">Creep</a></p>
+                        <p><a class="cl" href="#objects-GameObject" target="_parent">GameObject</a></p>
+                        <p><a class="cl" href="#objects-OwnedStructure" target="_parent">OwnedStructure</a></p>
+                        <p><a class="cl" href="#objects-Resource" target="_parent">Resource</a></p>
+                        <p><a class="cl" href="#objects-Source" target="_parent">Source</a></p>
+                        <p><a class="cl" href="#objects-Store" target="_parent">Store</a></p>
+                        <p><a class="cl" href="#objects-Structure" target="_parent">Structure</a></p>
+                        <p><a class="cl" href="#objects-StructureContainer" target="_parent">StructureContainer</a></p>
+                        <p><a class="cl" href="#objects-StructureExtension" target="_parent">StructureExtension</a></p>
+                        <p><a class="cl" href="#objects-StructureRampart" target="_parent">StructureRampart</a></p>
+                        <p><a class="cl" href="#objects-StructureRoad" target="_parent">StructureRoad</a></p>
+                        <p><a class="cl" href="#objects-StructureSpawn" target="_parent">StructureSpawn</a></p>
+                        <p><a class="cl" href="#objects-StructureTower" target="_parent">StructureTower</a></p>
+                        <p><a class="cl" href="#objects-StructureWall" target="_parent">StructureWall</a></p>
+                        <p><a class="cl" href="#objects-Spawning" target="_parent">Spawning</a></p>
+                        <p><a class="cl" href="#objects-CostMatrix" target="_parent">CostMatrix</a></p>
+                        <p><a class="cl" href="#objects-Visual" target="_parent">Visual</a></p>
+                    </details><br>
+                    <details open>
+                        <summary class="tle">FUNCTIONS</summary>
+                        <p><a class="cl" href="#functions-createConstructionSite/" target="_parent">createConstructionSite</a></p>
+                        <p><a class="cl" href="#functions-findClosestByPath" target="_parent">findClosestByPath</a></p>
+                        <p><a class="cl" href="#functions-findClosestByRange" target="_parent">findClosestByRange</a></p>
+                        <p><a class="cl" href="#functions-findInRange" target="_parent">findInRange</a></p>
+                        <p><a class="cl" href="#functions-findPath" target="_parent">findPath</a></p>
+                        <p><a class="cl" href="#functions-getCpuTime" target="_parent">getCpuTime</a></p>
+                        <p><a class="cl" href="#functions-getDirection" target="_parent">getDirection</a></p>
+                        <p><a class="cl" href="#functions-getHeapStatistics" target="_parent">getHeapStatistics</a></p>
+                        <p><a class="cl" href="#functions-getObjectById" target="_parent">getObjectById</a></p>
+                        <p><a class="cl" href="#functions-getObjectsByPrototype" target="_parent">getObjectsByPrototype</a></p>
+                        <p><a class="cl" href="#functions-getObjects" target="_parent">getObjects</a></p>
+                        <p><a class="cl" href="#functions-getRange" target="_parent">getRange</a></p>
+                        <p><a class="cl" href="#functions-getTerrainAt" target="_parent">getTerrainAt</a></p>
+                        <p><a class="cl" href="#functions-getTicks" target="_parent">getTicks</a></p>
+                        <p><a class="cl" href="#functions-searchPath" target="_parent">searchPath</a></p>
+                    </details><br>
+                    <details open>
+                        <summary class="tle">CAPTURE THE FLAG</summary>
+                        <p><a class="cl" href="#capture-the-flag-BodyPart" target="_parent">BodyPart</a></p>
+                        <p><a class="cl" href="#capture-the-flag-Flag" target="_parent">Flag</a></p>
+                        <p><a class="cl" href="#capture-the-flag-StructureTower" target="_parent">StructureTower</a></p>
+                    </details><br>
+                    <details open>
+                        <summary class="tle">SPAWN AND SWAMP</summary>
+                    </details><br>
+                    <details open>
+                        <summary class="tle">COLLECT AND CONTROL</summary>
+                        <p><a class="cl" href="#collect-and-control-AreaEffect" target="_parent">AreaEffect</a></p>
+                        <p><a class="cl" href="#collect-and-control-ScoreCollector" target="_parent">ScoreCollector</a></p>
+                        <p><a class="cl" href="#collect-and-EFFECT_DAMAGE" target="_parent">EFFECT_DAMAGE</a></p>
+                        <p><a class="cl" href="#collect-and-EFFECT_FREEZE" target="_parent">EFFECT_FREEZE</a></p>
+                        <p><a class="cl" href="#collect-and-EFFECT_HEAL" target="_parent">EFFECT_HEAL</a></p>
+                        <p><a class="cl" href="#collect-and-RESOURCE_SCORE" target="_parent">RESOURCE_SCORE</a></p>
+                        <p><a class="cl" href="#collect-and-RESOURCE_SCORE_X" target="_parent">RESOURCE_SCORE_X</a></p>
+                        <p><a class="cl" href="#collect-and-RESOURCE_SCORE_Y" target="_parent">RESOURCE_SCORE_Y</a></p>
+                        <p><a class="cl" href="#collect-and-RESOURCE_SCORE_Z" target="_parent">RESOURCE_SCORE_Z</a></p>
+                    </details><br>
+                    <details open>
+                        <summary class="tle">CONSTANTS</summary>
+                        <p><a class="cl" href="#constants-ALL" target="_parent">ALL</a></p>
+                    </details>
+                </div>
             </div>
             <div class="content-right">
                 <div class="content-chapter" id="objects-arenaInfo">
@@ -172,7 +252,7 @@ export function loop() {
 
 export function loop() {
     let costs = new CostMatrix;
-    costs.set(constructionSite.x, constructionSite.y, 10); // avoid walking over a construction site
+    costs.set(constructionSite.x, constructionSite.y, 10); // 避免在建筑空位上走过。
 }
 </code></pre>
                         </div>
@@ -1312,11 +1392,11 @@ export function loop() {
                                 </tr>
                             </table>
                         </div>
-                        <div class="content-inside" id="Resource-amount">
+                        <div class="content-inside" id="Source-amount">
                             <p class="f16"><a class="head" href="#Source-energy">energy</a><span style="color: gray;" class="f12">number</span></p>
                             <p class="f12">当前能量源中的能量</p>
                         </div>
-                        <div class="content-inside" id="Resource-energyCapacity">
+                        <div class="content-inside" id="Source-energyCapacity">
                             <p class="f16"><a class="head" href="#Source-energyCapacity">energyCapacity</a><span style="color: gray;" class="f12">number</span></p>
                             <p class="f12">该能量源的最大存储能量</p>
                         </div>
@@ -1327,18 +1407,41 @@ export function loop() {
                         </div>
                     </div>
                 </div>
-                <!-- <div class="content-chapter" id="objects-Resource">
+                <div class="content-chapter" id="objects-Spawning">
                     <div class="content-desc">
-                        <p><span style="color: #6394f8;" class="f24">Resource</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a>
+                        <p><span style="color: #6394f8;" class="f24">Spawning</span><span style="color: gray;" class="f16">object
                     </span></p>
-                        <p class="f12">一个被丢弃的资源，如果迟迟不捡起来，过一段时间则会消失。丢弃的资源每刻减少的资源数计算公式为：向上取整(数量/1000)</p>
-                        <div class="content-inside" id="Resource-amount">
-                            <p class="f16"><a class="head" href="#Resource-amount">amount</a><span style="color: gray;" class="f12">number</span></p>
-                            <p class="f12">丢弃资源目前的剩余数量</p>
+                        <p class="f12">当前正在生成的Creep详情，可以通过<a class="cost" href="#StructureSpawn-spawning">StructureSpawn.spawning</a>属性获取并进行处理。</p>
+                        <div class="content-inside" id="Spawning-needTime">
+                            <p class="f16"><a class="head" href="#Spawning-needTime">needTime</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">生成Creep所需要的总时间</p>
                         </div>
-                        <div class="content-inside" id="Resource-resourceType">
-                            <p class="f16"><a class="head" href="#Resource-resourceType">resourceType</a><span style="color: gray;" class="f12">string</span></p>
-                            <p class="f12">RESOURCE_*的常量之一</p>
+                        <div class="content-inside" id="Spawning-remainingTime">
+                            <p class="f16"><a class="head" href="#Spawning-remainingTime">remainingTime</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">余下的时间</p>
+                        </div>
+                        <div class="content-inside" id="Spawning-creep">
+                            <p class="f16"><a class="head" href="#Spawning-creep">creep</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Creep">Creep</a></span></p>
+                            <p class="f12">要生成的Creep</p>
+                        </div>
+                        <div class="content-inside" id="Spawning-cancel">
+                            <p class="f16"><a class="head" href="#Spawning-cancel">cancel</a>()</p>
+                            <p class="f12">立刻取消生成Creep，但是生成的能量不会返还。</p>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div class="content-code">
@@ -1346,7 +1449,91 @@ export function loop() {
                             <pre><code class="javascript"></code></pre>
                         </div>
                     </div>
-                </div> -->
+                </div>
+                <div class="content-chapter" id="objects-Store">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">Store</span><span style="color: gray;" class="f16">object
+                    </span></p>
+                        <p class="f12">在其货物中包含资源的一个类对象。</p>
+                        <p class="f12">在游戏中共有两种存储器类型，分别是：通用存储器和限制存储器。</p>
+                        <ul class="f12" style="padding-left: 32px;">
+                            <li>通用存储器：可以容纳其容量范围内的任意资源（例如Creep或容器）</li>
+                            <li>限制存储器：只能容纳特定对象所需要的几种资源（如生成器、扩展装置、防御塔）</li>
+                        </ul>
+                        <p class="f12">你可以通过寻址他们作为对象属性，可以从存储器获取特定资源</p>
+                        <div class="content-inside" id="Store-getCapacity">
+                            <p class="f16"><a class="head" href="#Spawning-getCapacity">getCapacity</a><span style="color: white;">(</span><span class="tch">[resource]</span><span style="color: white;">)</span></p>
+                            <p class="f12">返回此存储器对于指定资源的容量，如果是通用存储，并且参数<span style="color: #f05654;">resource</span>是undefined，则返回该存储器的总容量。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">resource (optional)</td>
+                                        <td><a class="cp carry" href="#constants-all-RESOURCE_ENERGY">RESOURCE_ENERGY</a></td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="Store-getFreeCapacity">
+                            <p class="f16"><a class="head" href="#Store-getFreeCapacity">getFreeCapacity</a><span style="color: white;">(</span><span class="tch">[resource]</span><span style="color: white;">)</span></p>
+                            <p class="f12">返回该存储器的可用容量，对于限制存储器，如果传了参数并且该存储器可以存储该资源（有效），则返回该存储器对于参数资源可用容量。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">resource (optional)</td>
+                                        <td><a class="cp carry" href="#constants-all-RESOURCE_ENERGY">RESOURCE_ENERGY</a></td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="Store-getUsedCapacity">
+                            <p class="f16"><a class="head" href="#Store-getUsedCapacity">getUsedCapacity</a><span style="color: white;">(</span><span class="tch">[resource]</span><span style="color: white;">)</span></p>
+                            <p class="f12">返回此存储器对于指定资源已使用的容量，如果是通用存储，并且参数<span style="color: #f05654;">resource</span>是undefined，则返回该存储器已使用的的总容量。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">resource (optional)</td>
+                                        <td><a class="cp carry" href="#constants-all-RESOURCE_ENERGY">RESOURCE_ENERGY</a></td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
                 <div class="content-chapter" id="constants-ALL">
                     <div class="content-desc">
                         <div class="content-inside" id="constants-all-OK">
