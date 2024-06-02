@@ -17,7 +17,7 @@
             <div class="content-left" style="padding-left: 8px">
                 <h2>Screeps API</h2>
                 <label style="padding-left: 10px">
-                    <input type="search" id="search-box" placeholder="搜索" onchange="search()"/>
+                    <input type="search" id="search-box" placeholder="搜索" oninput="search()"/>
                 </label>
                 <div style="padding-top: 10px">
                     <details open>
@@ -1521,7 +1521,48 @@ export function loop() {
                     </div>
                     <div class="content-code">
                         <div style="padding-top: 0">
-                            <pre><code class="javascript"></code></pre>
+                            <pre><code class="javascript">console.log(creep.store[RESOURCE_ENERGY]);</code></pre>
+                        </div>
+                        <div style="padding-top: 126px">
+                            <pre><code class="javascript">if (creep.store[RESOURCE_ENERGY] < creep.store.getCapacity()) {
+    creep.harvest(source);
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 60px">
+                            <pre><code class="javascript">if (tower.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
+    creep.transfer(tower, RESOURCE_ENERGY);
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 80px">
+                            <pre><code class="javascript">if (container.store.getUsedCapacity() == 0) {
+    // 该存储器是空的
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="objects-Structure">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">Structure</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a>
+                    </span></p>
+                        <p class="f12">所有结构对象类的基类。</p>
+                        <div class="content-inside" id="Structure-hits">
+                            <p class="f16"><a class="head" href="#Structure-hits">hits</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">该结构的当前血量。</p>
+                        </div>
+                        <div class="content-inside" id="Structure-hitsMax">
+                            <p class="f16"><a class="head" href="#Structure-hits">hitsMax</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">该结构的最大血量。</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">import { getObjectsByPrototype } from 'game/utils';
+import { Structure } from 'game/prototypes';
+
+export function loop() {
+    let structures = getObjectsByPrototype(Structure).filter(i => i.hits < i.hitsMax);
+    console.log(structures.length);
+}</code></pre>
                         </div>
                     </div>
                 </div>
