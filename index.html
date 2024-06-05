@@ -1665,14 +1665,14 @@ creep.moveTo(closestEmptyExtension);</code></pre>
                             <table style="border-collapse: collapse;" cellpadding="8">
                                 <tr style="border-bottom: 1px solid gray;">
                                     <td style="width: 200px;">花费</td>
-                                    <td style="width: 400px;"><ul style="margin: 0;">
+                                    <td style="width: 400px;"><ul style="margin: 0;" class="f12">
                                         <li>平原上10</li>
                                         <li>沼泽上50</li>
                                     </ul></td>
                                 </tr>
                                 <tr>
                                     <td>血量</td>
-                                    <td><ul style="margin: 0;">
+                                    <td><ul style="margin: 0;" class="f12">
                                         <li>平原上500</li>
                                         <li>沼泽上2500</li>
                                     </ul></td>
@@ -1713,7 +1713,7 @@ creep.moveTo(closestEmptyExtension);</code></pre>
                         </div>
                         <div class="content-inside" id="StructureSpawn-store">
                             <p class="f16"><a class="head" href="#StructureSpawn-store">store</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Store">Store</a></span></p>
-                            <p class="f12">一个<a class="cost" href="#objects-Store">Store</a>对象，包含目前该Creep所拥有的货物</p>
+                            <p class="f12">一个<a class="cost" href="#objects-Store">Store</a>对象，包含目前该结构所拥有的货物</p>
                         </div>
                         <div class="content-inside" id="StructureSpawn-spawning">
                             <p class="f16"><a class="head" href="#StructureSpawn-spawning">spawning</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Spawning">Spawning</a></span></p>
@@ -1773,27 +1773,506 @@ creep.moveTo(closestEmptyExtension);</code></pre>
                                         <td style="width: 460px;">该Creep不属于你</td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-ERR_BUSY">ERR_BUSY</a></td>
-                                        <td style="width: 20px;">-4</td>
-                                        <td style="width: 460px;">该生成器已经在生成另一个Creep了</td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_BUSY">ERR_BUSY</a></td>
+                                        <td>-4</td>
+                                        <td>该生成器已经在生成另一个Creep了</td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-ERR_NOT_ENOUGH_ENERGY">ERR_NOT_ENOUGH_ENERGY</a></td>
-                                        <td style="width: 20px;">-6</td>
-                                        <td style="width: 460px;">该生成器以及其扩展结构所包含的能量不足以生成给定属性的Creep</td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_ENOUGH_ENERGY">ERR_NOT_ENOUGH_ENERGY</a></td>
+                                        <td>-6</td>
+                                        <td>该生成器以及其扩展结构所包含的能量不足以生成给定属性的Creep</td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
-                                        <td style="width: 20px;">-10</td>
-                                        <td style="width: 460px;">属性参数不正确</td>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
+                                        <td>-10</td>
+                                        <td>属性参数不正确</td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
                     </div>
                     <div class="content-code">
+                        <div style="padding-top: 372px">
+                            <pre><code class="javascript">import { getObjectsByPrototype } from 'game/utils';
+import { StructureSpawn } from 'game/prototypes';
+
+export function loop() {
+    const mySpawn = getObjectsByPrototype(StructureSpawn).find(s => s.my);
+    const creep = mySpawn.spawnCreep([WORK, CARRY, MOVE]).object;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="objects-StructureTower">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">StructureTower</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-OwnedStructure">OwnedStructure</a>
+                    </span></p>
+                        <p class="f12">远程攻击范围内的游戏对象或者治疗己方Creep。其效果与距离成线性关系。每次行动都会消耗能量。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td style="width: 300px;">花费</td>
+                                    <td style="width: 300px;">1250</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>血量</td>
+                                    <td>3000</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>容量</td>
+                                    <td>50</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>冷却</td>
+                                    <td>10刻</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>行动最大距离</td>
+                                    <td>50</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>行动一次的能量</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>攻击效果</td>
+                                    <td>距离≤5时150血直到距离≥20时37血</td>
+                                </tr>
+                                <tr>
+                                    <td>治疗效果</td>
+                                    <td>距离≤5时100血直到距离≥20时25血</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="content-inside" id="StructureTower-cooldown">
+                            <p class="f16"><a class="head" href="#StructureTower-cooldown">cooldown</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">该塔结构正在处于冷却状态的剩余刻时间。</p>
+                        </div>
+                        <div class="content-inside" id="StructureTower-store">
+                            <p class="f16"><a class="head" href="#StructureTower-store">store</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Store">Store</a></span></p>
+                            <p class="f12">一个<a class="cost" href="#objects-Store">Store</a>对象，包含目前该结构所拥有的货物</p>
+                        </div>
+                        <div class="content-inside" id="StructureTower-attack">
+                            <p class="f16"><a class="head" href="#StructureTower-attack">attack</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
+                            <p class="f12">远程攻击范围内的任何Creep或结构。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="#objects-Creep">Creep</a><br><a class="cp carry" href="#objects-Structure">Structure</a></td>
+                                        <td>要攻击的目标对象</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_ENOUGH_ENERGY">ERR_NOT_ENOUGH_ENERGY</a></td>
+                                        <td>-6</td>
+                                        <td>该塔结构没有足够的能量</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>提供的参数不正确</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="#constants-all-ERR_TIRED">ERR_TIRED</a></td>
+                                        <td>-11</td>
+                                        <td>该塔目前正在冷却</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="StructureTower-heal">
+                            <p class="f16"><a class="head" href="#StructureTower-heal">heal</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
+                            <p class="f12">远程治疗范围内的任何Creep。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">target</td>
+                                        <td><a class="cp carry" href="#objects-Creep">Creep</a></td>
+                                        <td>要治疗的目标Creep对象</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回以下代码之一：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-OK">OK</a></td>
+                                        <td style="width: 20px;">0</td>
+                                        <td style="width: 460px;">操作已成功执行</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td>-1</td>
+                                        <td>该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="#constants-all-ERR_NOT_ENOUGH_ENERGY">ERR_NOT_ENOUGH_ENERGY</a></td>
+                                        <td>-6</td>
+                                        <td>该塔结构没有足够的能量</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                        <td>-7</td>
+                                        <td>提供的参数不正确</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a class="cl cp" href="#constants-all-ERR_TIRED">ERR_TIRED</a></td>
+                                        <td>-11</td>
+                                        <td>该塔目前正在冷却</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 500px">
+                            <pre><code class="javascript">import { getObjectsByPrototype } from 'game/utils';
+import { Creep } from 'game/prototypes';
+import { TOWER_RANGE } from 'game/constants';
+
+export function loop() {
+    let target = tower.findClosestByRange(getObjectsByPrototype(Creep).filter(i => !i.my));
+    if (tower.getRangeTo(target) <= TOWER_RANGE) {
+        tower.attack(target);
+    }
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 156px">
+                            <pre><code class="javascript">let creeps = getObjectsByPrototype(Creep);
+let myDamagedCreeps = creeps.filter(i => i.my && i.hits < i.hitsMax);
+let target = tower.findClosestByRange(myDamagedCreeps);
+if (creep.heal(target) == ERR_NOT_IN_RANGE) {
+    creep.moveTo(target);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="objects-StructureWall">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">StructureWall</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-Structure">Structure</a>
+                    </span></p>
+                        <p class="f12">阻挡所有的Creep的移动。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td style="width: 300px;">花费</td>
+                                    <td style="width: 300px;">100</td>
+                                </tr>
+                                <tr>
+                                    <td>血量</td>
+                                    <td>10000</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content-code">
                         <div style="padding-top: 0">
                             <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="objects-Visual">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">Visual</span><span style="color: gray;" class="f16">class
+                    </span></p>
+                        <p class="f12">可视化操作提供了一种在游戏中显示各种可视化调试信息的方法。所有绘制的坐标均以游戏坐标为单位，并且以场地中心为中心。例如(10,10)将指向x:10; y:10的Creep中心。允许使用分数的坐标。</p>
+                        <div class="content-inside" id="Visual-layer">
+                            <p class="f16"><a class="head" href="#Visual-layer">layer</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">对象的视觉层。</p>
+                        </div>
+                        <div class="content-inside" id="Visual-persistent">
+                            <p class="f16"><a class="head" href="#Visual-persistent">persistent</a><span style="color: gray;" class="f12">boolean</span></p>
+                            <p class="f12">此对象的视觉效果是否持续。</p>
+                        </div>
+                        <div class="content-inside" id="Visual-constructor">
+                            <p class="f16"><a class="head" href="#Visual-constructor">constructor</a><span style="color: white;">(</span><span class="tch">[layer]</span><span style="color: white;">, </span><span class="tch">persistent</span><span style="color: white;">)</span></p>
+                            <p class="f12">创建一个新的可视化空实例。</p>
+                            <div class="f12" style="height: 188px;">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">layer (optional)</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>该对象的视觉效果层。上层的视觉效果与下层的视觉效果重叠。默认值为0。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">persistent</td>
+                                        <td><span style="color: gray">boolean</span></td>
+                                        <td>此对象中的视觉效果是否持久。非持久视觉效果仅在当前刻期间可见。</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-inside" id="Visual-circle">
+                            <p class="f16"><a class="head" href="#Visual-circle">circle</a><span style="color: white;">(</span><span class="tch">pos</span><span style="color: white;">, </span><span class="tch">[style]</span><span style="color: white;">)</span></p>
+                            <p class="f12">绘制一个圆。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 500px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">pos</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>对象的位置中心，可以是来自GameObject或任何包含了x和y的对象。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">style (optional)</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>一个具有以下属性的对象：
+                                        <ul style="margin: 0;" class="f12">
+                                            <li>radius (number) 圆的半径，默认为0.15。</li>
+                                            <li>fill (string) 填充颜色，格式如下：#ffffff（十六进制三位数），默认为#ffffff。</li>
+                                            <li>opacity (number) 不透明度，默认为0.5。</li>
+                                            <li>stroke (string) 描边颜色，格式如下：#ffffff（十六进制三位数），默认为#ffffff。</li>
+                                            <li>strokeWidth (number) 描边线宽，默认为0.1。</li>
+                                            <li>lineStyle (string) undefined【solid line（实线）】、dashed（虚线）、dotted（点划线）三者中的一个，默认为undefined。</li>
+                                        </ul></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12" style="padding-top: 8px;">返回<a class="cost" href="#objects-Visual">Visual</a>对象本身，以便进行链式调用。</p>
+                        </div>
+                        <div class="content-inside" id="Visual-clear">
+                            <p class="f16"><a class="head" href="#Visual-clear">clear</a><span style="color: white;">()</span></p>
+                            <p class="f12">从对象中删除所有视觉效果。</p>
+                            <p class="f12">返回Visual对象本身，以便可以链接调用。</p>
+                        </div>
+                        <div class="content-inside" id="Visual-line">
+                            <p class="f16"><a class="head" href="#Visual-line">line</a><span style="color: white;">(</span><span class="tch">pos1</span><span style="color: white;">, </span><span class="tch">pos2</span><span style="color: white;">, </span><span class="tch">[style]</span><span style="color: white;">)</span></p>
+                            <p class="f12">绘制一条线。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 500px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">pos</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>对象的起始位置，可以是来自GameObject或任何包含了x和y的对象。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">pos</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>对象的结束位置，可以是来自GameObject或任何包含了x和y的对象。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">style (optional)</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>一个具有以下属性的对象：
+                                        <ul style="margin: 0;" class="f12">
+                                            <li>width (number) 线条宽度，默认为0.1。</li>
+                                            <li>color (string) 线条颜色，格式如下：#ffffff（十六进制三位数），默认为#ffffff。</li>
+                                            <li>opacity (number) 不透明度，默认为0.5。</li>
+                                            <li>lineStyle (string) undefined【solid line（实线）】、dashed（虚线）、dotted（点划线）三者中的一个，默认为undefined。</li>
+                                        </ul></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12" style="padding-top: 8px;">返回<a class="cost" href="#objects-Visual">Visual</a>对象本身，以便进行链式调用。</p>
+                        </div>
+                        <div class="content-inside" id="Visual-poly">
+                            <p class="f16"><a class="head" href="#Visual-line">poly</a><span style="color: white;">(</span><span class="tch">points</span><span style="color: white;">, </span><span class="tch">[style]</span><span style="color: white;">)</span></p>
+                            <p class="f12">绘制一条折线。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 500px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">points</td>
+                                        <td><span style="color: gray">array</span></td>
+                                        <td>一个点的数组，每个元素都可以是来自GameObject或任何包含了x和y的对象。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">style (optional)</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>一个具有以下属性的对象：
+                                        <ul style="margin: 0;" class="f12">
+                                            <li>fill (string) 填充颜色，格式如下：#ffffff（十六进制三位数），默认为#ffffff。</li>
+                                            <li>opacity (number) 不透明度，默认为0.5。</li>
+                                            <li>stroke (string) 描边颜色，格式如下：#ffffff（十六进制三位数），默认为#ffffff。</li>
+                                            <li>strokeWidth (number) 描边线宽，默认为0.1。</li>
+                                            <li>lineStyle (string) undefined【solid line（实线）】、dashed（虚线）、dotted（点划线）三者中的一个，默认为undefined。</li>
+                                        </ul></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12" style="padding-top: 8px;">返回<a class="cost" href="#objects-Visual">Visual</a>对象本身，以便进行链式调用。</p>
+                        </div>
+                        <div class="content-inside" id="Visual-rect">
+                            <p class="f16"><a class="head" href="#Visual-rect">rect</a><span style="color: white;">(</span><span class="tch">pos</span><span style="color: white;">, </span><span class="tch">w</span><span style="color: white;">, </span><span class="tch">h</span><span style="color: white;">, </span><span class="tch">[style]</span><span style="color: white;">)</span></p>
+                            <p class="f12">绘制一条矩形。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 500px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">pos</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>对象的位置左上角，可以是来自GameObject或任何包含了x和y的对象。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">w</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>矩形的宽度。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">h</td>
+                                        <td><span style="color: gray">number</span></td>
+                                        <td>矩形的高度。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">style (optional)</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>一个具有以下属性的对象：
+                                        <ul style="margin: 0;" class="f12">
+                                            <li>fill (string) 填充颜色，格式如下：#ffffff（十六进制三位数），默认为#ffffff。</li>
+                                            <li>opacity (number) 不透明度，默认为0.5。</li>
+                                            <li>stroke (string) 描边颜色，格式如下：#ffffff（十六进制三位数），默认为#ffffff。</li>
+                                            <li>strokeWidth (number) 描边线宽，默认为0.1。</li>
+                                            <li>lineStyle (string) undefined【solid line（实线）】、dashed（虚线）、dotted（点划线）三者中的一个，默认为undefined。</li>
+                                        </ul></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12" style="padding-top: 8px;">返回<a class="cost" href="#objects-Visual">Visual</a>对象本身，以便进行链式调用。</p>
+                        </div>
+                        <div class="content-inside" id="Visual-text">
+                            <p class="f16"><a class="head" href="#Visual-text">text</a><span style="color: white;">(</span><span class="tch">text</span><span style="color: white;">, </span><span class="tch">pos</span><span style="color: white;">, </span><span class="tch">[style]</span><span style="color: white;">)</span></p>
+                            <p class="f12">绘制一个文本，你可以使用任何有效的Unicode字符，包括emoji。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 500px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">text</td>
+                                        <td><span style="color: gray">string</span></td>
+                                        <td>文本信息。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">pos</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>对象标签基线的位置，可以是来自GameObject或任何包含了x和y的对象。</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">style (optional)</td>
+                                        <td><span style="color: gray">object</span></td>
+                                        <td>一个具有以下属性的对象：
+                                        <ul style="margin: 0;" class="f12">
+                                            <li>color (string) 字体颜色，格式如下：#ffffff（十六进制三位数），默认为#ffffff。</li>
+                                            <li>font (number|string) 以下格式之一的数字或字符串："0.7"（以游戏坐标表示的相对大小）、"20px"（以像素表示的绝对大小）、"0.7 serif"或"bold italic 1.5 Times New Roman"。</li>
+                                            <li>stroke (string) 描边颜色，格式如下：#ffffff（十六进制三位数），默认为#ffffff。</li>
+                                            <li>strokeWidth (number) 描边线宽，默认为0.15。</li>
+                                            <li>backgroundColor (string) 背景色，格式如下：#ffffff（十六进制三位数），默认为undefined。当使用了背景色后，文本垂直对齐将设置在中间（默认为基线）。</li>
+                                            <li>backgroundPadding (number) 背景矩形填充，默认为0.3。</li>
+                                            <li>aling (string) 文本对其方式，center（居中）、left（居左）、right（居右）三者中的一个。默认为center。</li>
+                                            <li>opacity (number) 不透明度，默认为1。</li>
+                                        </ul></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12" style="padding-top: 8px;">返回<a class="cost" href="#objects-Visual">Visual</a>对象本身，以便进行链式调用。</p>
+                        </div>
+                        <div class="content-inside" id="Visual-size">
+                            <p class="f16"><a class="head" href="#Visual-size">size</a><span style="color: white;">()</span></p>
+                            <p class="f12">获取对象中存储的所有视觉效果的大小。</p>
+                            <p class="f12">返回以字节为单位的视觉效果的大小。</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 242px">
+                            <pre><code class="javascript">for(const creep of creeps) {
+    if(!creep.hitsVisual) {
+        creep.hitsVisual = new Visual(10, true);
+    }
+    creep.hitsVisual.clear().text(
+        creep.hits,
+        { x: creep.x, y: creep.y - 0.5 }, // above the creep
+        {
+            font: '0.5',
+            opacity: 0.7,
+            backgroundColor: '#808080',
+            backgroundPadding: '0.03'
+        });
+}</code></pre>
+                        </div>
+                        <div style="padding-top: 423px">
+                            <pre><code class="javascript">new Visual().line({x: 1, y: 99}, {x: 99, y: 1}, {color: '#ff0000'});
+new Visual().line(creep, tower, {lineStyle: 'dashed'});</code></pre>
                         </div>
                     </div>
                 </div>
@@ -1824,7 +2303,7 @@ creep.moveTo(closestEmptyExtension);</code></pre>
                             <p class="f16"><a class="head" href="#constants-all-ERR_NOT_ENOUGH_RESOURCES">ERR_NOT_ENOUGH_RESOURCES</a><span style="color: gray;" class="f12">-6</span></p>
                         </div>
                         <div class="content-inside" id="constants-all-ERR_INVALID_TARGET">
-                            <p class="f16"><a class="head" href="#constants-all-ERR_INVALID_TARGET">ERR_NOT_ENOUGH_RESOURCES</a><span style="color: gray;" class="f12">-7</span></p>
+                            <p class="f16"><a class="head" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a><span style="color: gray;" class="f12">-7</span></p>
                         </div>
                         <div class="content-inside" id="constants-all-ERR_FULL">
                             <p class="f16"><a class="head" href="#constants-all-ERR_FULL">ERR_FULL</a><span style="color: gray;" class="f12">-8</span></p>

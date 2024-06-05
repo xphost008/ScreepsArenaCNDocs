@@ -15,3 +15,5 @@
 贡献人员名单：
 
 [https://xphost008.github.io/ScreepsArenaCNDocs/blob/master/CONTRIBUTOR.md](./CONTRIBUTOR.md)
+
+目前该文档完成程度：60%
