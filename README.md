@@ -10,4 +10,8 @@
 
 文档Pages地址：
 
-https://xphost008.github.io/ScreepsArenaCNDocs/
+[https://xphost008.github.io/ScreepsArenaCNDocs/](https://xphost008.github.io/ScreepsArenaCNDocs/)
+
+贡献人员名单：
+
+[https://xphost008.github.io/ScreepsArenaCNDocs/blob/master/CONTRIBUTOR.md](./CONTRIBUTOR.md)
