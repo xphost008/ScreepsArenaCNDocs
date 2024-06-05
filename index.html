@@ -1566,6 +1566,97 @@ export function loop() {
                         </div>
                     </div>
                 </div>
+                <div class="content-chapter" id="objects-StructureContainer">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">StructureContainer</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-OwnedStructure">OwnedStructure</a>
+                    </span></p>
+                        <p class="f12">一个可以用于存储资源的小型容器，这是一个可移动的结构，所有丢弃/掉落的资源都会自动转移到同一部分的容器中。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td style="width: 300px;">容量</td>
+                                    <td style="width: 300px;">2000</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>花费</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>血量</td>
+                                    <td>300</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="content-inside" id="StructureContainer-store">
+                            <p class="f16"><a class="head" href="#StructureContainer-store">store</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Store">Store</a></span></p>
+                            <p class="f12">一个存储容器对象，包含目前该结构所拥有的货物</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="objects-StructureExtension">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">StructureExtension</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-OwnedStructure">OwnedStructure</a>
+                    </span></p>
+                        <p class="f12">一个包含了可用于生成更高级的Creep所需要的能量。扩展结构可以放置在任何地方，无论距离远近，任何生成器都可以使用它们。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td style="width: 300px;">花费</td>
+                                    <td style="width: 300px;">200</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>血量</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>容量</td>
+                                    <td>100</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="content-inside" id="StructureExtension-store">
+                            <p class="f16"><a class="head" href="#StructureExtension-store">store</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Store">Store</a></span></p>
+                            <p class="f12">一个存储容器对象，包含目前该结构所拥有的货物</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">let allExtensions = getObjectsByPrototype(StructureExtension);
+let myEmptyExtensions = allExtensions.filter(e => e.my && e.store.getUsedCapacity(RESOURCE_ENERGY) == 0)
+let closestEmptyExtension = creep.findClosestByRange(myEmptyExtensions);
+creep.moveTo(closestEmptyExtension);</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="objects-StructureRampart">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">StructureRampart</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-OwnedStructure">OwnedStructure</a>
+                    </span></p>
+                        <p class="f12">可以阻挡敌方Creep的移动，并保护同一位置的己方Creep和结构。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td style="width: 300px;">花费</td>
+                                    <td style="width: 300px;">200</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>血量</td>
+                                    <td>10000</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
                 <div class="content-chapter" id="constants-ALL">
                     <div class="content-desc">
                         <div class="content-inside" id="constants-all-OK">
