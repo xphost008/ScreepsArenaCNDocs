@@ -2,7 +2,6 @@
 <html lang="zh" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
-<!--        <meta http-equiv="refresh" content="3;url=./html/objects/arenaInfo">-->
         <title>Screeps Arena中文文档</title>
         <link rel="stylesheet" type="text/css" href="js/styles/atom-one-dark-reasonable.min.css">
         <link rel="stylesheet" type="text/css" href="css/catalog.css">
@@ -329,7 +328,7 @@ export function loop() {
                         </div>
                         <div class="content-inside" id="creep-store">
                             <p class="f16"><a class="head" href="#creep-store">store</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Store">Store</a></span></p>
-                            <p class="f12">一个存储容器对象，包含目前该Creep所拥有的货物</p>
+                            <p class="f12">一个<a class="cost" href="#objects-Store">Store</a>对象，包含目前该Creep所拥有的货物</p>
                         </div>
                         <div class="content-inside" id="creep-attack">
                             <p class="f16"><a class="head" href="#creep-attack">attack</a><span style="color: white;">(</span><span class="tch">target</span><span style="color: white;">)</span></p>
@@ -1581,7 +1580,7 @@ export function loop() {
                                     <td>花费</td>
                                     <td>100</td>
                                 </tr>
-                                <tr style="border-bottom: 1px solid gray;">
+                                <tr>
                                     <td>血量</td>
                                     <td>300</td>
                                 </tr>
@@ -1589,7 +1588,7 @@ export function loop() {
                         </div>
                         <div class="content-inside" id="StructureContainer-store">
                             <p class="f16"><a class="head" href="#StructureContainer-store">store</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Store">Store</a></span></p>
-                            <p class="f12">一个存储容器对象，包含目前该结构所拥有的货物</p>
+                            <p class="f12">一个<a class="cost" href="#objects-Store">Store</a>对象，包含目前该结构所拥有的货物</p>
                         </div>
                     </div>
                     <div class="content-code">
@@ -1613,7 +1612,7 @@ export function loop() {
                                     <td>血量</td>
                                     <td>100</td>
                                 </tr>
-                                <tr style="border-bottom: 1px solid gray;">
+                                <tr>
                                     <td>容量</td>
                                     <td>100</td>
                                 </tr>
@@ -1621,7 +1620,7 @@ export function loop() {
                         </div>
                         <div class="content-inside" id="StructureExtension-store">
                             <p class="f16"><a class="head" href="#StructureExtension-store">store</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Store">Store</a></span></p>
-                            <p class="f12">一个存储容器对象，包含目前该结构所拥有的货物</p>
+                            <p class="f12">一个<a class="cost" href="#objects-Store">Store</a>对象，包含目前该结构所拥有的货物</p>
                         </div>
                     </div>
                     <div class="content-code">
@@ -1644,11 +1643,152 @@ creep.moveTo(closestEmptyExtension);</code></pre>
                                     <td style="width: 300px;">花费</td>
                                     <td style="width: 300px;">200</td>
                                 </tr>
-                                <tr style="border-bottom: 1px solid gray;">
+                                <tr>
                                     <td>血量</td>
                                     <td>10000</td>
                                 </tr>
                             </table>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="objects-StructureRoad">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">StructureRoad</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-Structure">Structure</a>
+                    </span></p>
+                        <p class="f12">将移动花费降低至1，使用道路结构可以创建更少<a class="cp move" href="#constants-all-MOVE">MOVE</a>属性的Creep。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td style="width: 200px;">花费</td>
+                                    <td style="width: 400px;"><ul style="margin: 0;">
+                                        <li>平原上10</li>
+                                        <li>沼泽上50</li>
+                                    </ul></td>
+                                </tr>
+                                <tr>
+                                    <td>血量</td>
+                                    <td><ul style="margin: 0;">
+                                        <li>平原上500</li>
+                                        <li>沼泽上2500</li>
+                                    </ul></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="objects-StructureSpawn">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">StructureSpawn</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-OwnedStructure">OwnedStructure</a>
+                    </span></p>
+                        <p class="f12">该结构会生成Creep，并且会在每刻生成少量的能量。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td style="width: 300px;">花费</td>
+                                    <td style="width: 300px;">3000</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>血量</td>
+                                    <td>3000</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td>容量</td>
+                                    <td>1000</td>
+                                </tr>
+                                <tr>
+                                    <td>生成时间</td>
+                                    <td>每个属性生成3刻</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="content-inside" id="StructureSpawn-store">
+                            <p class="f16"><a class="head" href="#StructureSpawn-store">store</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Store">Store</a></span></p>
+                            <p class="f12">一个<a class="cost" href="#objects-Store">Store</a>对象，包含目前该Creep所拥有的货物</p>
+                        </div>
+                        <div class="content-inside" id="StructureSpawn-spawning">
+                            <p class="f16"><a class="head" href="#StructureSpawn-spawning">spawning</a><span style="color: gray;" class="f12"><a class="hl" href="#objects-Spawning">Spawning</a></span></p>
+                            <p class="f12">如果该生成器正在生成Creep，则该函数将返回一个<a class="cost" href="#objects-Spawning">Spawning</a>对象，否则为null。</p>
+                        </div>
+                        <div class="content-inside" id="StructureSpawn-spawnCreep">
+                            <p class="f16"><a class="head" href="#StructureSpawn-spawnCreep">spawnCreep</a><span style="color: white;">(</span><span class="tch">body</span><span style="color: white;">)
+                            </span></p>
+                            <p class="f12">如果该生成器正在生成Creep，则该函数将返回一个<a class="cost" href="#objects-Spawning">Spawning</a>对象，否则为null。</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <thead>
+                                    <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                        <td style="width: 80px;">参数</td>
+                                        <td style="width: 50px;">类型</td>
+                                        <td style="width: 460px;">描述</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="color: #f05654;">body</td>
+                                        <td><span style="color: gray">array&lt;string&gt;</span></td>
+                                        <td>描述Creep属性的数组，应该包含1-50个具有以下常量之一的元素：<br>
+                                            <a class="cp work" href="#constants-all-WORK">WORK</a>
+                                            <a class="cp move" href="#constants-all-MOVE">MOVE</a>
+                                            <a class="cp carry" href="#constants-all-CARRY">CARRY</a>
+                                            <a class="cp attack" href="#constants-all-ATTACK">ATTACK</a>
+                                            <a class="cp ranged" href="#constants-all-RANGED_ATTACK">RANGED_ATTACK</a>
+                                            <a class="cp heal" href="#constants-all-HEAL">HEAL</a>
+                                            <a class="cp tough" href="#constants-all-TOUGH">TOUGH</a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="f12">返回一个具有以下属性之一的对象：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr style="border-bottom: 1px solid gray;">
+                                        <td style="width: 80px; color: #f05654;">error</td>
+                                        <td style="width: 50px; color: gray;">number</td>
+                                        <td style="width: 460px;">ERR_*的常量之一</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #f05654;">object</td>
+                                        <td><a class="cp carry" href="#objects-Creep">Creep</a></td>
+                                        <td>正在生成的Creep对象</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p class="f12">可能的错误代码：</p>
+                            <div class="f12">
+                                <table style="border-collapse: collapse;" cellpadding="8">
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-ERR_NOT_OWNER">ERR_NOT_OWNER</a></td>
+                                        <td style="width: 20px;">-1</td>
+                                        <td style="width: 460px;">该Creep不属于你</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-ERR_BUSY">ERR_BUSY</a></td>
+                                        <td style="width: 20px;">-4</td>
+                                        <td style="width: 460px;">该生成器已经在生成另一个Creep了</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-ERR_NOT_ENOUGH_ENERGY">ERR_NOT_ENOUGH_ENERGY</a></td>
+                                        <td style="width: 20px;">-6</td>
+                                        <td style="width: 460px;">该生成器以及其扩展结构所包含的能量不足以生成给定属性的Creep</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 120px;"><a class="cl cp" href="#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
+                                        <td style="width: 20px;">-10</td>
+                                        <td style="width: 460px;">属性参数不正确</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div class="content-code">
@@ -1917,9 +2057,5 @@ creep.moveTo(closestEmptyExtension);</code></pre>
                 </div>
             </div>
         </div>
-<!--        <h1>欢迎来到Screeps Arena中文文档！</h1>-->
-<!--        <h3>3秒后跳转到第一章</h3>-->
-<!--        <p>页面跳转中，请稍后……</p>-->
-<!--        <p>如果浏览器没有跳转，请点击右侧链接手动跳转：<a href="./html/objects/arenaInfo/">点我跳转</a></p>-->
     </body>
 </html>
