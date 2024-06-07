@@ -2777,6 +2777,163 @@ export function loop() {
                         </div>
                     </div>
                 </div>
+                <div class="content-chapter" id="functions-searchPath">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-searchPath">searchPath</a><span style="color: white;">(</span><span class="tch">origin</span><span style="color: white;">, </span><span class="tch">goal</span><span style="color: white;">, </span><span class="tch">[opts]</span><span style="color: white;">)</span></p>
+                        <p class="f12">查找起始位置与目标位置之间的最佳路径。请注意，如果未指定成本矩阵的searchPath（见下文）将只使用地形数据。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">参数</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">origin</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>见下文。</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">goal</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>见下文。</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">opts (optional)</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>见下文。</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="f12">目标可以是包含x和y属性的对象，也可以是有着下面定义的对象。.<br>如果提供的目标不止一个（作为目标数组），那么将返回所有目标中成本最少的路径。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">属性</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">pos</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>一个包含x和y属性的对象</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">range</td>
+                                    <td><span style="color: gray">number</span></td>
+                                    <td>当被认为达到目标之前的位置范围，默认是0</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="f12">opts是一个包含额外寻路标志的对象：</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">属性</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">costMatrix</td>
+                                    <td><span style="color: gray">CostMatrix</span></td>
+                                    <td>自定义导航成本数据</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">plainCost</td>
+                                    <td><span style="color: gray">number</span></td>
+                                    <td>在平原位置移动的成本。默认为2</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">swampCost</td>
+                                    <td><span style="color: gray">number</span></td>
+                                    <td>在沼泽位置移动的成本。默认为10</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">flee</td>
+                                    <td><span style="color: gray">boolean</span></td>
+                                    <td>这种方法不是搜索通往目标的路径，而是搜索远离目标的路径。将返回超出每个目标范围成本最少的路径。默认值为false</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">maxOps</td>
+                                    <td><span style="color: gray">number</span></td>
+                                    <td>允许的最大寻路搜索操作次数。默认值为50000</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">maxCost</td>
+                                    <td><span style="color: gray">number</span></td>
+                                    <td>返回的路径允许的最大成本。默认为Infinity（无限）</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">heuristicWeight</td>
+                                    <td><span style="color: gray">number</span></td>
+                                    <td>从1到9的权重，用于 A * 公式F = G + 权重 * H 中的启发式。默认值为1.2</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="f12">返回一个包含以下属性的对象</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">属性</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">path</td>
+                                    <td><span style="color: gray">array</span></td>
+                                    <td>以包含x和y属性形式找到的路径对象数组</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">ops</td>
+                                    <td><span style="color: gray">number</span></td>
+                                    <td>计算该路径前执行的搜索操作总数</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">cost</td>
+                                    <td><span style="color: gray">number</span></td>
+                                    <td>根据plainCost、swampCost和给定的成本矩阵实例得出的路径总成本</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">incomplete</td>
+                                    <td><span style="color: gray">boolean</span></td>
+                                    <td>如果寻路程序未能找到完整的路径，则此值为true</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- <p class="f12">返回<a class="cl cp" href="#constants-all-TERRAIN_WALL">TERRAIN_WALL</a>，<a class="cl cp" href="#constants-all-TERRAIN_SWAMP">TERRAIN_SWAMP</a>，<a class="cl cp" href="#constants-all-TERRAIN_PLAIN">TERRAIN_PLAIN</a>三者之一。</p> -->
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">import { searchPath } from 'game/path-finder';
+import { getObjectsByPrototype } from 'game/utils';
+
+export function loop() {
+    let target = getObjectsByPrototype(StructureSpawn).find(i => !i.my);
+    let creep = getObjectsByPrototype(Creep).find(i => i.my);
+
+    let ret = searchPath(creep, target);
+    console.log(ret.cost); // 总体成本
+    console.log(ret.path.length); // 格子数
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
                 <div class="content-chapter" id="constants-ALL">
                     <div class="content-desc">
                         <div class="content-inside" id="constants-all-OK">
