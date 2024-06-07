@@ -16,4 +16,4 @@
 
 [https://github.com/xphost008/ScreepsArenaCNDocs/blob/master/CONTRIBUTOR.md](./CONTRIBUTOR.md)
 
-目前该文档完成程度：80%
+目前该文档完成程度：100%

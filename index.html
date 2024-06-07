@@ -72,13 +72,13 @@
                         <summary class="tle">COLLECT AND CONTROL</summary>
                         <p><a class="cl" href="#collect-and-control-AreaEffect" target="_parent">AreaEffect</a></p>
                         <p><a class="cl" href="#collect-and-control-ScoreCollector" target="_parent">ScoreCollector</a></p>
-                        <p><a class="cl" href="#collect-and-EFFECT_DAMAGE" target="_parent">EFFECT_DAMAGE</a></p>
-                        <p><a class="cl" href="#collect-and-EFFECT_FREEZE" target="_parent">EFFECT_FREEZE</a></p>
-                        <p><a class="cl" href="#collect-and-EFFECT_HEAL" target="_parent">EFFECT_HEAL</a></p>
-                        <p><a class="cl" href="#collect-and-RESOURCE_SCORE" target="_parent">RESOURCE_SCORE</a></p>
-                        <p><a class="cl" href="#collect-and-RESOURCE_SCORE_X" target="_parent">RESOURCE_SCORE_X</a></p>
-                        <p><a class="cl" href="#collect-and-RESOURCE_SCORE_Y" target="_parent">RESOURCE_SCORE_Y</a></p>
-                        <p><a class="cl" href="#collect-and-RESOURCE_SCORE_Z" target="_parent">RESOURCE_SCORE_Z</a></p>
+                        <p><a class="cl" href="#collect-and-control-EFFECT_DAMAGE" target="_parent">EFFECT_DAMAGE</a></p>
+                        <p><a class="cl" href="#collect-and-control-EFFECT_FREEZE" target="_parent">EFFECT_FREEZE</a></p>
+                        <p><a class="cl" href="#collect-and-control-EFFECT_HEAL" target="_parent">EFFECT_HEAL</a></p>
+                        <p><a class="cl" href="#collect-and-control-RESOURCE_SCORE" target="_parent">RESOURCE_SCORE</a></p>
+                        <p><a class="cl" href="#collect-and-control-RESOURCE_SCORE_X" target="_parent">RESOURCE_SCORE_X</a></p>
+                        <p><a class="cl" href="#collect-and-control-RESOURCE_SCORE_Y" target="_parent">RESOURCE_SCORE_Y</a></p>
+                        <p><a class="cl" href="#collect-and-control-RESOURCE_SCORE_Z" target="_parent">RESOURCE_SCORE_Z</a></p>
                     </details><br>
                     <details open>
                         <summary class="tle">CONSTANTS</summary>
@@ -2916,7 +2916,6 @@ export function loop() {
                                 </tbody>
                             </table>
                         </div>
-                        <!-- <p class="f12">返回<a class="cl cp" href="#constants-all-TERRAIN_WALL">TERRAIN_WALL</a>，<a class="cl cp" href="#constants-all-TERRAIN_SWAMP">TERRAIN_SWAMP</a>，<a class="cl cp" href="#constants-all-TERRAIN_PLAIN">TERRAIN_PLAIN</a>三者之一。</p> -->
                     </div>
                     <div class="content-code">
                         <div style="padding-top: 0">
@@ -2931,6 +2930,180 @@ export function loop() {
     console.log(ret.cost); // 总体成本
     console.log(ret.path.length); // 格子数
 }</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="capture-the-flag-BodyPart">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">BodyPart</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a>
+                    </span></p>
+                        <p class="f12">Creep的独立属性。<br>通过Creep赋予该属性以增加Creep的属性</p>
+                        <div class="content-inside" id="capture-the-flag-BodyPart-type">
+                            <p class="f16"><a class="head" href="#capture-the-flag-BodyPart-type">type</a><span style="color: gray;" class="f12">string</span></p>
+                            <p class="f12">属性类型，是以下常量之一：<br><a class="cp work" href="#constants-all-WORK">WORK</a> <a class="cp move" href="#constants-all-MOVE">MOVE</a> <a class="cp carry" href="#constants-all-CARRY">CARRY</a> <a class="cp attack" href="#constants-all-ATTACK">ATTACK</a> <a class="cp ranged" href="#constants-all-RANGED_ATTACK">RANGED_ATTACK</a> <a class="cp heal" href="#constants-all-HEAL">HEAL</a> <a class="cp tough" href="#constants-all-TOUGH">TOUGH</a></p>
+                        </div>
+                        <div class="content-inside" id="capture-the-flag-BodyPart-ticksToDecay">
+                            <p class="f16"><a class="head" href="#capture-the-flag-BodyPart-ticksToDecay">ticksToDecay</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">该物品消失前的刻数。</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="capture-the-flag-Flag">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">Flag</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a>
+                    </span></p>
+                        <p class="f12">旗帜是这个游戏模式的关键游戏对象，当Creep到达旗帜上方即可夺得该旗帜，并且控制旗帜旁边的塔。当夺下场上所有的旗帜就算胜利！</p>
+                        <div class="content-inside" id="capture-the-flag-Flag-my">
+                            <p class="f16"><a class="head" href="#capture-the-flag-Flag-my">my</a><span style="color: gray;" class="f12">boolean</span></p>
+                            <p class="f12">己方为true，敌方为false。如果不属于双方，则返回undefined。</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="capture-the-flag-StructureTower">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">StructureTower</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-OwnedStructure">OwnedStructure</a>
+                    </span></p>
+                        <p class="f12">在夺取旗帜游戏模式中，塔结构是经过改装的，它们每回合都可以开火，并能自我获取能量。此外，还可以让Creep走到其相邻的旗帜上以夺得它们。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <tr style="border-bottom: 1px solid gray;">
+                                    <td style="width: 300px;">冷却</td>
+                                    <td style="width: 300px;">0</td>
+                                </tr>
+                                <tr>
+                                    <td>能量再生</td>
+                                    <td>每刻1能量</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="collect-and-control-AreaEffect">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">AreaEffect</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a>
+                    </span></p>
+                        <p class="f12">一个可同时对所有Creep应用指定类型效果的对象</p>
+                        <div class="content-inside" id="collect-and-control-AreaEffect-effect">
+                            <p class="f16"><a class="head" href="#collect-and-control-AreaEffect-effect">effect</a><span style="color: gray;" class="f12">string</span></p>
+                            <p class="f12">来自以下常量之一：<a class="cl cp" href="#collect-and-control-EFFECT_FREEZE">EFFECT_FREEZE</a>，<a class="cl cp" href="#collect-and-control-EFFECT_DAMAGE">EFFECT_DAMAGE</a>，<a class="cl cp" href="#collect-and-control-EFFECT_HEAL">EFFECT_HEAL</a></p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="collect-and-control-EFFECT_DAMAGE">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f16">EFFECT_DAMAGE</span><span style="color: gray;" class="f12">damage</span></p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="collect-and-control-EFFECT_FREEZE">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f16">EFFECT_FREEZE</span><span style="color: gray;" class="f12">freeze</span></p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="collect-and-control-EFFECT_HEAL">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f16">EFFECT_HEAL</span><span style="color: gray;" class="f12">heal</span></p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="collect-and-control-RESOURCE_SCORE">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f16">RESOURCE_SCORE</span><span style="color: gray;" class="f12">score</span></p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="collect-and-control-RESOURCE_SCORE_X">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f16">RESOURCE_SCORE_X</span><span style="color: gray;" class="f12">score_x</span></p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="collect-and-control-RESOURCE_SCORE_Y">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f16">RESOURCE_SCORE_Y</span><span style="color: gray;" class="f12">score_y</span></p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="collect-and-control-RESOURCE_SCORE_Z">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f16">RESOURCE_SCORE_Z</span><span style="color: gray;" class="f12">score_z</span></p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="collect-and-control-ScoreCollector">
+                    <div class="content-desc">
+                        <p><span style="color: #6394f8;" class="f24">ScoreCollector</span><span style="color: gray;" class="f16">class extends <a class="hl" href="#objects-GameObject">GameObject</a>
+                    </span></p>
+                        <p class="f12">得分收集器是该游戏模式得关键游戏对象，将相应得资源转移到收集器上，夺取资源并获得胜利。</p>
+                        <div class="content-inside" id="collect-and-control-ScoreCollector-my">
+                            <p class="f16"><a class="head" href="#collect-and-control-ScoreCollector-my">my</a><span style="color: gray;" class="f12">boolean</span></p>
+                            <p class="f12">你是否可以控制该收集器。</p>
+                        </div>
+                        <div class="content-inside" id="collect-and-control-ScoreCollector-resourceType">
+                            <p class="f16"><a class="head" href="#collect-and-control-ScoreCollector-resourceType">resourceType</a><span style="color: gray;" class="f12">string</span></p>
+                            <p class="f12">该收集器可以接收的资源类型。</p>
+                        </div>
+                        <div class="content-inside" id="collect-and-control-ScoreCollector-score">
+                            <p class="f16"><a class="head" href="#collect-and-control-ScoreCollector-score">score</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">该收集器隶属的玩家当前收集的分数。</p>
+                        </div>
+                        <div class="content-inside" id="collect-and-control-ScoreCollector-scoreTotal">
+                            <p class="f16"><a class="head" href="#collect-and-control-ScoreCollector-scoreTotal">scoreTotal</a><span style="color: gray;" class="f12">number</span></p>
+                            <p class="f12">立刻获胜所需要的总分数。</p>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
                         </div>
                     </div>
                 </div>
