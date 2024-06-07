@@ -43,7 +43,7 @@
                     </details><br>
                     <details open>
                         <summary class="tle">FUNCTIONS</summary>
-                        <p><a class="cl" href="#functions-createConstructionSite/" target="_parent">createConstructionSite</a></p>
+                        <p><a class="cl" href="#functions-createConstructionSite" target="_parent">createConstructionSite</a></p>
                         <p><a class="cl" href="#functions-findClosestByPath" target="_parent">findClosestByPath</a></p>
                         <p><a class="cl" href="#functions-findClosestByRange" target="_parent">findClosestByRange</a></p>
                         <p><a class="cl" href="#functions-findInRange" target="_parent">findInRange</a></p>
@@ -160,14 +160,14 @@ export function loop(){
                     <div class="content-desc">
                         <p><span style="color: #6394f8;" class="f24">CostMatrix</span><span style="color: gray;" class="f16">class
                     </span></p>
-                        <p class="f12">用于自定义导航代价数据的一个类，如果在该类中发现非0值，则将使用该值代替掉默认地形造成的代价。</p>
+                        <p class="f12">用于自定义导航成本数据的一个类，如果在该类中发现非0值，则将使用该值代替掉默认地形造成的成本。</p>
                         <div class="content-inside" id="CostMatrix-constructor" style="height: +102px;">
                             <p class="f16"><a class="head" href="#CostMatrix-constructor">constructor</a><span style="color: gray;" class="f12">()</span></p>
                             <p class="f12">为所有位置创建一个初始值为0的新<a class="cost" href="#objects-CostMatrix">CostMatrix</a>。</p>
                         </div>
                         <div class="content-inside" id="CostMatrix-set">
                             <p class="f16"><a class="head" href="#CostMatrix-set">set</a><span style="color: white;">(</span><span class="tch">x</span><span style="color: white;">, </span><span class="tch">y</span><span style="color: white;">, </span><span class="tch">cost</span><span style="color: white;">)</span></p>
-                            <p class="f12">在该<a class="cost" href="#objects-CostMatrix">CostMatrix</a>中设置来自x, y位置的代价值。</p>
+                            <p class="f12">在该<a class="cost" href="#objects-CostMatrix">CostMatrix</a>中设置来自x, y位置的成本值。</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -191,7 +191,7 @@ export function loop(){
                                     <tr>
                                         <td style="color: #f05654;">cost</td>
                                         <td><span style="color: gray">number</span></td>
-                                        <td>该位置的代价值，必须是一个整数。0的代价将使用该位置的默认代价。大于或等于255的代价将被视作无法使用。</td>
+                                        <td>该位置的成本值，必须是一个整数。0的成本将使用该位置的默认成本。大于或等于255的成本将被视作无法使用。</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -199,7 +199,7 @@ export function loop(){
                         </div>
                         <div class="content-inside" id="CostMatrix-get">
                             <p class="f16"><a class="head" href="#CostMatrix-get">get</a><span style="color: white;">(</span><span class="tch">x</span><span style="color: white;">, </span><span class="tch">y</span><span style="color: white;">)</span></p>
-                            <p class="f12">在该<a class="cost" href="#objects-CostMatrix">CostMatrix</a>中获取来自x, y位置的代价值。</p>
+                            <p class="f12">在该<a class="cost" href="#objects-CostMatrix">CostMatrix</a>中获取来自x, y位置的成本值。</p>
                             <div class="f12">
                                 <table style="border-collapse: collapse;" cellpadding="8">
                                     <thead>
@@ -1203,7 +1203,7 @@ if (targets.length) {
                                     <tr>
                                         <td style="color: #f05654;">positions</td>
                                         <td><span style="color: gray">array</span></td>
-                                        <td>要搜索的对象数组，内容须是GameObject或任何包含x和y属性的对象数组。</td>
+                                        <td>要搜索的对象数组，内容须是<a class="cost" href="#objects-GameObject">GameObject</a>或任何包含x和y属性的对象数组。</td>
                                     </tr>
                                     <tr>
                                         <td style="color: #f05654;">opts (optional)</td>
@@ -1231,7 +1231,7 @@ if (targets.length) {
                                     <tr>
                                         <td style="color: #f05654;">positions</td>
                                         <td><span style="color: gray">array</span></td>
-                                        <td>要搜索的对象数组，内容须是GameObject或任何包含x和y属性的对象数组。</td>
+                                        <td>要搜索的对象数组，内容须是<a class="cost" href="#objects-GameObject">GameObject</a>或任何包含x和y属性的对象数组。</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -1254,7 +1254,7 @@ if (targets.length) {
                                     <tr>
                                         <td style="color: #f05654;">positions</td>
                                         <td><span style="color: gray">array</span></td>
-                                        <td>要搜索的对象数组，内容须是GameObject或任何包含x和y属性的对象数组。</td>
+                                        <td>要搜索的对象数组，内容须是<a class="cost" href="#objects-GameObject">GameObject</a>或任何包含x和y属性的对象数组。</td>
                                     </tr>
                                     <tr>
                                         <td style="color: #f05654;">range</td>
@@ -2261,7 +2261,7 @@ if (creep.heal(target) == ERR_NOT_IN_RANGE) {
     }
     creep.hitsVisual.clear().text(
         creep.hits,
-        { x: creep.x, y: creep.y - 0.5 }, // above the creep
+        { x: creep.x, y: creep.y - 0.5 }, // 在Creep的上方
         {
             font: '0.5',
             opacity: 0.7,
@@ -2273,6 +2273,507 @@ if (creep.heal(target) == ERR_NOT_IN_RANGE) {
                         <div style="padding-top: 423px">
                             <pre><code class="javascript">new Visual().line({x: 1, y: 99}, {x: 99, y: 1}, {color: '#ff0000'});
 new Visual().line(creep, tower, {lineStyle: 'dashed'});</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-createConstructionSite">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-createConstructionSite">createConstructionSite</a><span style="color: white;">(</span><span class="tch">position</span><span style="color: white;">, </span><span class="tch">prototype</span><span style="color: white;">)</span></p>
+                        <p class="f12">在指定的位置建造一个新的<a class="cost" href="#objects-ConstructionSite">ConstructionSite</a>。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">参数</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">position</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>一个包含了x和y属性的对象</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">prototype</td>
+                                    <td><span style="color: gray">class</span></td>
+                                    <td>一个继承了<a class="cost" href="#objects-GameObject">GameObject</a>的原型。</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="f12">返回一个具有以下属性的对象：</p>
+                        <ul class="f12" style="padding-left: 32px;">
+                            <li>error: number (ERR_*的常量之一)</li>
+                            <li>object: <a class="cost" href="#objects-ConstructionSite">ConstructionSite</a> (本次调用创建的<a class="cost" href="#objects-ConstructionSite">ConstructionSite</a>实例)</li>
+                        </ul>
+                        <p class="f12">可能的错误代码：</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <tr>
+                                    <td><a class="cl cp" href="#constants-all-ERR_INVALID_ARGS">ERR_INVALID_ARGS</a></td>
+                                    <td>-10</td>
+                                    <td>位置或结构原型不正确</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="cl cp" href="#constants-all-ERR_INVALID_TARGET">ERR_INVALID_TARGET</a></td>
+                                    <td>-7</td>
+                                    <td>结构无法放置在指定位置</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="cl cp" href="#constants-all-ERR_FULL">ERR_FULL</a></td>
+                                    <td>-8</td>
+                                    <td>你有太多的结构空位啦。每名玩家最多拥有10个结构空位。</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-findClosestByPath">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-findClosestByPath">findClosestByPath</a><span style="color: white;">(</span><span class="tch">fromPos</span><span style="color: white;">, </span><span class="tch">positions</span><span style="color: white;">, </span><span class="tch">[opts]</span><span style="color: white;">)</span></p>
+                        <p class="f12">从给定位置数组中找到与搜索位置路径最短的位置。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">参数</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">fromPos</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>要搜索的位置。可以是<a class="cost" href="#objects-GameObject">GameObject</a>或任何包含x和y属性的对象。</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">position</td>
+                                    <td><span style="color: gray">array</span></td>
+                                    <td>要搜索的位置。一个包含<a class="cost" href="#objects-GameObject">GameObjects</a>或任何包含x和y属性对象的数组。</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">opts (optional)</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>包含searchPath函数支持的其他寻路标志的对象。</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="f12">如果从位置数组中找到距离该位置最接近的一个对象，则返回这个对象，否则为空。</p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">let targets = getObjectsByPrototype(Creep).filter(c => !c.my);
+let closestTarget = findClosestByPath(creep, targets);
+creep.moveTo(closestTarget);
+creep.attack(closestTarget);</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-findClosestByRange">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-findClosestByRange">findClosestByRange</a><span style="color: white;">(</span><span class="tch">fromPos</span><span style="color: white;">, </span><span class="tch">positions</span><span style="color: white;">)</span></p>
+                        <p class="f12">找出与给定位置直线距离最短的位置。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">参数</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">fromPos</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>要搜索的位置。可以是<a class="cost" href="#objects-GameObject">GameObject</a>或任何包含x和y属性的对象。</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">position</td>
+                                    <td><span style="color: gray">array</span></td>
+                                    <td>要搜索的位置。一个包含<a class="cost" href="#objects-GameObject">GameObjects</a>或任何包含x和y属性对象的数组。</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="f12">返回给定位置数组中找到距离给定位置最近的对象，如果没有有效位置，则返回空值。</p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">let targets = getObjectsByPrototype(Creep).filter(c => !c.my);
+let closestTarget = findClosestByRange(tower, targets);
+tower.attack(closestTarget);</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-findInRange">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-findInRange">findInRange</a><span style="color: white;">(</span><span class="tch">fromPos</span><span style="color: white;">, </span><span class="tch">positions</span><span style="color: white;">, </span><span class="tch">range</span><span style="color: white;">)</span></p>
+                        <p class="f12">查找指定线性范围内的所有基本游戏对象。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">参数</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">fromPos</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>要搜索的位置。可以是<a class="cost" href="#objects-GameObject">GameObject</a>或任何包含x和y属性的对象。</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">position</td>
+                                    <td><span style="color: gray">array</span></td>
+                                    <td>要搜索的位置。一个包含<a class="cost" href="#objects-GameObject">GameObjects</a>或任何包含x和y属性对象的数组。</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">range</td>
+                                    <td><span style="color: gray">number</span></td>
+                                    <td>距离范围。</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="f12">返回一个数组，其中包含了在指定范围内找到的所有对象。</p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">let targets = getObjectsByPrototype(Creep).filter(c => !c.my);
+let targetsInRange = findInRange(creep, targets, 3);
+if (targetsInRange.length >= 3) {
+    creep.rangedMassAttack();
+} else if (targetsInRange.length > 0) {
+    creep.rangedAttack(targetsInRange[0]);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-findPath">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-findPath">findPath</a><span style="color: white;">(</span><span class="tch">fromPos</span><span style="color: white;">, </span><span class="tch">toPos</span><span style="color: white;">, </span><span class="tch">[opts]</span><span style="color: white;">)</span></p>
+                        <p class="f12">查询从fromPos到toPos之间的最佳路径。与<a class="cost" href="#functions-searchPath">searchPath</a>不同，findPath默认会避开所有的障碍物，(除非指定了CostMatrix)</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">参数</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">fromPos</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>要搜索的起始位置。可以是<a class="cost" href="#objects-GameObject">GameObject</a>或任何包含x和y属性的对象。</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">toPos</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>要搜索的目标位置。可以是<a class="cost" href="#objects-GameObject">GameObject</a>或任何包含x和y属性的对象。</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">opts (optional)</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>包含附加寻路标志的对象：<ul class="f12" style="margin: 0;">
+                                        <li>ignore: array（在搜索过程中不应被视为障碍物的对象）</li>
+                                        <li>searchPath 函数支持的任何选项</li>
+                                    </ul></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="f12">以包含x和y属性的对象数组形式返回找到的路径。</p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">let targets = getObjectsByPrototype(Creep).filter(c => !c.my);
+let targetsInRange = findInRange(creep, targets, 3);
+if (targetsInRange.length >= 3) {
+    creep.rangedMassAttack();
+} else if (targetsInRange.length > 0) {
+    creep.rangedAttack(targetsInRange[0]);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-getCpuTime">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-getCpuTime">getCpuTime</a><span style="color: white;">()</span></p>
+                        <p class="f12">获取当前刻度中经过的CPU停滞时间（以纳秒为单位）。</p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">import { getCpuTime } from 'game/utils';
+import { arenaInfo } from 'game';
+export function loop() {
+    if( arenaInfo.cpuTimeLimit - getCpuTime() < 1000000) {
+        // 超时前剩余时间不足 1 毫秒！
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-getDirection">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-getDirection">getDirection</a><span style="color: white;">(</span><span class="tch">dx</span><span style="color: white;">, </span><span class="tch">dy</span><span style="color: white;">)</span></p>
+                        <p class="f12">通过x和y的差值获取线性方向。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">参数</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">dx</td>
+                                    <td><span style="color: gray">number</span></td>
+                                    <td>x坐标的差值。</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">dy</td>
+                                    <td><span style="color: gray">number</span></td>
+                                    <td>y坐标的差值。</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="f12">返回代表一个方向常量的数字。</p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">let pos = path.findIndex(p => p.x == creep.x && p.y == creep.y);
+let direction = getDirection(path[pos+1].x-path[pos].x, path[pos+1].y-path[pos].y);
+creep.move(direction);</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-getHeapStatistics">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-getHeapStatistics">getHeapStatistics</a><span style="color: white;">()</span></p>
+                        <p class="f12">使用该方法获取虚拟机的堆统计数据。其返回值与 Node.js 函数 v8.getHeapStatistics()[nodejs.org] 几乎相同。该函数返回一个额外的属性：externally_allocated_size（外部分配的内存大小），这是当前分配的内存总量，不包含在 v8 堆中，但计入了此隔离区的内存限制。超过一定大小的 ArrayBuffer 实例是外部分配的，并将计入此处。</p>
+                        <p class="f12" style="color: red;">警告：由于该函数不常用，因此我没认真看英文，所以该处使用了DeepL机翻，请见谅！</p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">import { getHeapStatistics } from 'game/utils';
+
+export function loop() {
+    let heap = getHeapStatistics();
+    console.log(`Used ${heap.total_heap_size} / ${heap.heap_size_limit}`);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-getObjectById">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-getObjectById">getObjectById</a><span style="color: white;">(</span><span class="tch">id</span><span style="color: white;">)</span></p>
+                        <p class="f12">获取具有指定ID的唯一对象。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">参数</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">id</td>
+                                    <td><span style="color: gray">string</span></td>
+                                    <td>所需对象的<span style="color: #f05654">id</span>属性。请参阅<a class="cost" href="#objects-GameObject">GameObject</a>原型。</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">import { getObjectById } from 'game/utils';
+export function loop() {
+    runCreep(myCreep.id);
+}
+function runCreep(id) {
+    let creep = getObjectById(id);
+    creep.move(RIGHT);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-getObjects">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-getObjects">getObjects</a><span style="color: white;">()</span></p>
+                        <p class="f12">获取场地中的所有游戏对象。</p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-getObjectsByPrototype">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-getObjectsByPrototype">getObjectsByPrototype</a><span style="color: white;">(</span><span class="tch">prototype</span><span style="color: white;">)</span></p>
+                        <p class="f12">获取游戏中所有具有指定原型的对象，例如所有Creep。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">参数</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">prototype</td>
+                                    <td><span style="color: gray">class</span></td>
+                                    <td>继承自<a class="cost" href="#objects-GameObject">GameObject</a>的原型。</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">import { getObjectsByPrototype } from 'game/utils';
+import { Creep } from 'game/prototypes';
+
+export function loop() {
+    const creeps = getObjectsByPrototype(Creep);
+
+    creeps.forEach(function(myCreep) {
+        runCreep(myCreep);
+    });
+}
+
+function runCreep(creep) {
+    if(creep.my) {
+        creep.move(RIGHT);
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-getRange">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-getRange">getRange</a><span style="color: white;">(</span><span class="tch">a</span><span style="color: white;">, </span><span class="tch">b</span><span style="color: white;">)</span></p>
+                        <p class="f12">获取两个对象之间的线性范围。a和b可以是包含x和y属性的任何对象。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">参数</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">a</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>两个对象中的第一个。可以是<a class="cost" href="#objects-GameObject">GameObject</a>或任何包含x和y属性的对象。</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #f05654;">a</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>两个对象中的第二个。可以是<a class="cost" href="#objects-GameObject">GameObject</a>或任何包含x和y属性的对象。</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="f12">返回两个对象之间的格子数。</p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">import { getObjectsByPrototype } from 'game/utils';
+import { Creep } from 'game/prototypes';
+
+export function loop() {
+    const creeps = getObjectsByPrototype(Creep);
+
+    creeps.forEach(function(myCreep) {
+        runCreep(myCreep);
+    });
+}
+
+function runCreep(creep) {
+    if(creep.my) {
+        creep.move(RIGHT);
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-getTerrainAt">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-getTerrainAt">getTerrainAt</a><span style="color: white;">(</span><span class="tch">pos</span><span style="color: white;">)</span></p>
+                        <p class="f12">获取给定位置处地形的整数表示。</p>
+                        <div class="f12">
+                            <table style="border-collapse: collapse;" cellpadding="8">
+                                <thead>
+                                <tr style="border-bottom: 1px solid gray; font-weight: bold;">
+                                    <td style="width: 80px;">参数</td>
+                                    <td style="width: 50px;">类型</td>
+                                    <td style="width: 460px;">描述</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="color: #f05654;">pos</td>
+                                    <td><span style="color: gray">object</span></td>
+                                    <td>位置是一个包含x和y属性的对象。</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="f12">返回<a class="cl cp" href="#constants-all-TERRAIN_WALL">TERRAIN_WALL</a>，<a class="cl cp" href="#constants-all-TERRAIN_SWAMP">TERRAIN_SWAMP</a>，<a class="cl cp" href="#constants-all-TERRAIN_PLAIN">TERRAIN_PLAIN</a>三者之一。</p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">ilet matrix = new CostMatrix;
+// 在 CostMatrix 中填入全速地形成本，以便进行分析：
+for(let y = 0; y < 100; y++) {
+    for(let x = 0; x < 100; x++) {
+        let tile = getTerrainAt({x: x, y: y});
+        let weight =
+            tile === TERRAIN_WALL  ? 255 : // wall  => unwalkable
+            tile === TERRAIN_SWAMP ?   5 : // swamp => weight:  5
+                                            1 ; // plain => weight:  1
+        matrix.set(x, y, weight);
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-chapter" id="functions-getTicks">
+                    <div class="content-desc">
+                        <p class="f16"><a class="head" href="#functions-getTicks">getTicks</a><span style="color: white;">()</span></p>
+                        <p class="f12">从当前一局游戏开始到结束的时间。</p>
+                    </div>
+                    <div class="content-code">
+                        <div style="padding-top: 0">
+                            <pre><code class="javascript">import { getTicks } from 'game';
+export function loop() {
+    console.log(getTicks());
+}</code></pre>
                         </div>
                     </div>
                 </div>
